@@ -20,7 +20,13 @@ export let isiTable = `
         </div>
       </div>
     </th>
-    <th class="whitespace-nowrap px-4 bg-white text-sm font-medium text-coolGray-800 text-left">#SEKOLAH#</th>
+    <th class="whitespace-nowrap px-4 bg-white text-left">
+        <div class="w-auto p-2">
+          <p class="text-xs font-semibold text-coolGray-800">#SEKOLAH#</p>
+          <p class="text-xs font-medium text-coolGray-500">#NOHPSEKOLAH#</p>
+        </div>
+      </div>
+    </th>
     <th class="whitespace-nowrap px-4 bg-white text-sm font-medium text-coolGray-800 text-center">#JURUSAN#</th>
     <th class="whitespace-nowrap px-4 bg-white text-sm font-medium text-coolGray-500 text-left">#JALUR#</th>
     <th class="whitespace-nowrap px-4 bg-white text-sm font-medium text-#col#-500 text-left">#ALULBI#</th>

@@ -10,6 +10,7 @@ function isiRow(value) {
     .replace("#NAMA#", value.biodata.nama)
     .replace("#NOHP#", value.biodata.phone_number)
     .replace("#SEKOLAH#", value.asalsekolah.nama)
+    .replace("#NOHPSEKOLAH#", value.asalsekolah.phone_number)
     .replace("#JURUSAN#", value.jurusan.nama)
     .replace("#JALUR#", value.jalur)
     .replace("#ALULBI#", value.alulbi)
