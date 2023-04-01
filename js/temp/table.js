@@ -11,6 +11,9 @@ export let isiTable = `
         <div class="w-auto p-2">
           <p class="text-xs font-semibold text-coolGray-800">#KDPENDAFTAR#</p>
         </div>
+      </div>
+    </th>
+    <th class="whitespace-nowrap px-4 bg-white text-left">
         <div class="w-auto p-2">
           <p class="text-xs font-semibold text-coolGray-800">#NAMA#</p>
           <p class="text-xs font-medium text-coolGray-500">#NOHP#</p>
