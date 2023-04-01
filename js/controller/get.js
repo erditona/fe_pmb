@@ -12,6 +12,7 @@ function isiRow(value) {
     .replace("#SEKOLAH#", value.asalsekolah.nama)
     .replace("#NOHPSEKOLAH#", value.asalsekolah.phone_number)
     .replace("#JURUSAN#", value.jurusan.nama)
+    .replace("#JURUSAN#", value.jurusan.jenjang)
     .replace("#JALUR#", value.jalur)
     .replace("#ALULBI#", value.alulbi)
     .replace("#ALJURUSAN#", value.aljurusan)
