@@ -79,10 +79,8 @@ export let isiTable2 = `
 <tr>
   <div class="w-auto p-2">
     <div class="flex items-center justify-center w-10 h-10 text-base font-medium text-#WARNALOGO#-600 bg-#WARNALOGO#-200 rounded-md">ULBI</div>
-  </div>
-  <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
     <span class="ml-3 font-bold text-white">#KDJURUSAN#</span>
-  </th>
+  </div>
   <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">#NAMA#</td>
   <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">#JENJANG#</td>
   <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
