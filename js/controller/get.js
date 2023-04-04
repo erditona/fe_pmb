@@ -24,10 +24,10 @@ function isiRow(value) {
 }
 
 export function isiTableJurusan(results) {
-  results.forEach(isiRow);
+  results.forEach(isiRow2);
 }
-function isiRow(value) {
-  let content = isiTable
+function isiRow2(value) {
+  let content = isiTable2
     .replace("#KDPENDAFTAR#", value.kdpendaftar)
     .replace("#NAMA#", value.biodata.nama)
     .replace("#NOHP#", value.biodata.phone_number)
@@ -40,5 +40,5 @@ function isiRow(value) {
     .replace("#ALJURUSAN#", value.aljurusan)
     .replace("#WARNA#", getRandomColor())
     .replace(/#WARNALOGO#/g, getRandomColorName());
-  addInner("iniTabel", content);
+  addInner("TabelJurusan", content);
 }
