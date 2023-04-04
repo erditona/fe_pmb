@@ -27,7 +27,7 @@ export function isiTableJurusan(results) {
   results.forEach(isiRow);
 }
 function isiRow(value) {
-  let content = isiTableJurusan
+  let content = isiTable
     .replace("#KDPENDAFTAR#", value.kdpendaftar)
     .replace("#NAMA#", value.biodata.nama)
     .replace("#NOHP#", value.biodata.phone_number)
