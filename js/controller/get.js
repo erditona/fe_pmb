@@ -27,16 +27,16 @@ export function isiTableJurusan(results) {
 }
 function isiRow2(value) {
   let content = isiTable2
-    .replace("#KDPENDAFTAR#", value.kdpendaftar)
-    .replace("#NAMA#", value.biodata.nama)
-    .replace("#NOHP#", value.biodata.phone_number)
-    .replace("#SEKOLAH#", value.asalsekolah.nama)
-    .replace("#NOHPSEKOLAH#", value.asalsekolah.phone_number)
-    .replace("#JURUSAN#", value.jurusan.nama)
-    .replace("#JENJANG#", value.jurusan.jenjang)
-    .replace("#JALUR#", value.jalur)
-    .replace("#ALULBI#", value.alulbi)
-    .replace("#ALJURUSAN#", value.aljurusan)
+    // .replace("#KDPENDAFTAR#", value.kdpendaftar)
+    .replace("#NAMA#", value.nama)
+    // .replace("#NOHP#", value.biodata.phone_number)
+    // .replace("#SEKOLAH#", value.asalsekolah.nama)
+    // .replace("#NOHPSEKOLAH#", value.asalsekolah.phone_number)
+    // .replace("#JURUSAN#", value.jurusan.nama)
+    // .replace("#JENJANG#", value.jurusan.jenjang)
+    // .replace("#JALUR#", value.jalur)
+    // .replace("#ALULBI#", value.alulbi)
+    // .replace("#ALJURUSAN#", value.aljurusan)
     .replace("#WARNA#", getRandomColor())
     .replace(/#WARNALOGO#/g, getRandomColorName());
   addInner("TabelJurusan", content);
