@@ -27,16 +27,9 @@ export function isiTableJurusan(results) {
 }
 function isiRow2(value) {
   let content = isiTable2
-    // .replace("#KDPENDAFTAR#", value.kdpendaftar)
+    .replace("#KDJURUSAN#", value.kdjurusan)
     .replace("#NAMA#", value.nama)
-    // .replace("#NOHP#", value.biodata.phone_number)
-    // .replace("#SEKOLAH#", value.asalsekolah.nama)
-    // .replace("#NOHPSEKOLAH#", value.asalsekolah.phone_number)
-    // .replace("#JURUSAN#", value.jurusan.nama)
-    // .replace("#JENJANG#", value.jurusan.jenjang)
-    // .replace("#JALUR#", value.jalur)
-    // .replace("#ALULBI#", value.alulbi)
-    // .replace("#ALJURUSAN#", value.aljurusan)
+    .replace("#JENJANG#", value.jenjang)
     .replace("#WARNA#", getRandomColor())
     .replace(/#WARNALOGO#/g, getRandomColorName());
   addInner("TabelJurusan", content);
