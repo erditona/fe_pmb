@@ -13,33 +13,66 @@
   </head>
 
   <body class="antialiased bg-body text-body font-body">
-    <section class="bg-coolGray-50 py-4">
-        <div class="overflow-hidden border border-coolGray-100 rounded-md shadow-dashboard">
-          <div class="overflow-x-auto">
-            <table class="w-full" id="TabelJurusan">
-              <tr class="whitespace-nowrap h-11 bg-coolGray-50 bg-opacity-80 border-b border-coolGray-100">
-                <th class="px-4 font-semibold text-xs text-coolGray-500 uppercase text-left">
-                  <div class="flex items-center">
-                    <input class="mr-3 w-4 h-4 bg-white rounded" type="checkbox" />
-                    <p>Kode Jurusan</p>
-                  </div>
-                </th>
-                <th class="whitespace-nowrap px-4 font-semibold text-xs text-coolGray-500 uppercase text-center">Nama</th>
-                <th class="whitespace-nowrap px-4 font-semibold text-xs text-coolGray-500 uppercase text-center">Jenjang</th>
-                <th class="whitespace-nowrap font-semibold text-xs text-coolGray-500 uppercase text-center"></th>
-              </tr>
+    <!-- component -->
+    <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css" />
+    <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" />
 
-              <!-- ISI TABEL DARI SINI (BUAT pada FILE tabel.js) -->
-
-              <!-- ISI TABEL SAMPAI DISINI (BUAT pada FILE tabel.js) -->
+    <section class="relative py-16 bg-blueGray-50">
+      <div class="w-full mb-12 px-4">
+        <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-pink-900 text-white">
+          <div class="rounded-t mb-0 px-4 py-3 border-0">
+            <div class="flex flex-wrap items-center">
+              <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+                <h3 class="font-semibold text-lg text-white">Tabel Jurusan</h3>
+              </div>
+            </div>
+          </div>
+          <div class="block w-full overflow-x-auto">
+            <table class="items-center w-full bg-transparent border-collapse" id="TabelJurusan">
+              <thead>
+                <tr>
+                  <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-pink-800 text-pink-300 border-pink-700">Kode Jurusan</th>
+                  <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-pink-800 text-pink-300 border-pink-700">Nama Jurusan</th>
+                  <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-pink-800 text-pink-300 border-pink-700">Jenjang jurusan</th>
+                  <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-pink-800 text-pink-300 border-pink-700"></th>
+                </tr>
+              </thead>
             </table>
           </div>
         </div>
       </div>
-    </section> 
-   
+      <footer class="relative pt-8 pb-6 mt-8">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-wrap items-center md:justify-between justify-center">
+            <div class="w-full md:w-6/12 px-4 mx-auto text-center">
+              <div class="text-sm text-blueGray-500 font-semibold py-1">
+                Made with <a href="https://www.creative-tim.com/product/notus-js" class="text-blueGray-500 hover:text-gray-800" target="_blank">Notus JS</a> by
+                <a href="https://www.creative-tim.com" class="text-blueGray-500 hover:text-blueGray-800" target="_blank"> Creative Tim</a>.
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </section>
+
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="../js/charts-demo.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- <div class="max-w-2xl mx-auto">
+        <table class="w-full" id="TabelJurusan">
+            <tr class="whitespace-nowrap h-11 bg-coolGray-50 bg-opacity-80 border-b border-coolGray-100">
+              <th class="px-4 font-semibold text-xs text-coolGray-500 uppercase text-center">
+                <div class="flex items-center">
+                  <input class="mr-3 w-4 h-4 bg-white rounded" type="checkbox" />
+                  <p>Kode Jurusan</p>
+                </div>
+              </th>
+              <th class="whitespace-nowrap px-4 font-semibold text-xs text-coolGray-500 uppercase text-center">Nama</th>
+              <th class="whitespace-nowrap px-4 font-semibold text-xs text-coolGray-500 uppercase text-center">Jenjang</th>
+              <th class="whitespace-nowrap font-semibold text-xs text-coolGray-500 uppercase text-center"></th>
+            </tr> 
+          </table>    
+    </div> -->
   </body>
 </html>
