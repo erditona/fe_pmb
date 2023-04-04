@@ -1,6 +1,6 @@
 import { addInner } from "https://bukulapak.github.io/element/process.js";
 import { getRandomColor, getRandomColorName } from "https://bukulapak.github.io/image/process.js";
-import { isiTable } from "../temp/table.js";
+import { isiTable, isiTable2 } from "../temp/table.js";
 import { isiTableJurusan } from "../temp/table.js";
 
 export function isiTablePendaftaran(results) {
