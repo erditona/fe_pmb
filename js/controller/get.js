@@ -6,7 +6,6 @@ export function isiTablePendaftaran(results) {
   results.forEach(isiRow);
 }
 function isiRow(value) {
-  console.log(value);
   let content = isiTable
     .replace("#KDPENDAFTAR#", value.kdpendaftar)
     .replace("#NAMA#", value.biodata.nama)
