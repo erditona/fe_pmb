@@ -60,5 +60,5 @@ function isiRow4(value) {
     .replace("#ALAMAT#", value.alamat)
     .replace("#WARNA#", getRandomColor())
     .replace(/#WARNALOGO#/g, getRandomColorName());
-  addInner("TabelSekolah", content);
+  addInner("TabelCamaba", content);
 }
