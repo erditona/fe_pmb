@@ -49,7 +49,7 @@ function isiRow3(value) {
   addInner("TabelSekolah", content);
 }
 
-export function isiTableSekolah(results) {
+export function isiTableCamaba(results) {
   results.forEach(isiRow4);
 }
 function isiRow4(value) {
