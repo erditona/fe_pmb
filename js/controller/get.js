@@ -1,6 +1,6 @@
 import { addInner } from "https://bukulapak.github.io/element/process.js";
 import { getRandomColor, getRandomColorName } from "https://bukulapak.github.io/image/process.js";
-import { isiTable, isiTable2 } from "../temp/table.js";
+import { isiTable, isiTable2, isiTable3 } from "../temp/table.js";
 
 export function isiTablePendaftaran(results) {
   results.forEach(isiRow);
@@ -33,4 +33,18 @@ function isiRow2(value) {
     .replace("#WARNA#", getRandomColor())
     .replace(/#WARNALOGO#/g, getRandomColorName());
   addInner("TabelJurusan", content);
+}
+
+export function isiTableSekolah(results) {
+  results.forEach(isiRow3);
+}
+function isiRow3(value) {
+  let content = isiTable3
+    .replace("#KDSEKOLAH#", value.kdsekolah)
+    .replace("#NAMA#", value.nama)
+    .replace("#NOHP#", value.phone_number)
+    .replace("#ALAMAT#", value.alamat)
+    .replace("#WARNA#", getRandomColor())
+    .replace(/#WARNALOGO#/g, getRandomColorName());
+  addInner("TabelSekolah", content);
 }
