@@ -1,7 +1,7 @@
 # FRONT END PENERIMAAN MAHASISWA BARU 
 ## Link-FE
 * Tugas Week 6 : https://erditona.github.io/fe_pmb/template/index.html
-* PMB ku : https://erditona.github.io/fe_pmb/pmb/pages/admin/dashboard.html
+* PMB ku - UTS : https://erditona.github.io/fe_pmb/pmb/pages/admin/dashboard.html
 
 ## Api-BE 
 * Pendaftaran : https://ws-dito.herokuapp.com/pendaftaran
