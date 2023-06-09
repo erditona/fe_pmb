@@ -8,6 +8,7 @@ function pushData() {
     nama: getValue("nama"),
     jenjang: getValue("jenjang"),
   };
+  console.log(data);
   postData(urlPOST, data, AmbilResponse);
 }
 
