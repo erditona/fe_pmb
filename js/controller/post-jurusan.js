@@ -4,9 +4,9 @@ import { urlPOST, AmbilResponse } from "../config/url-post-jurusan";
 
 function pushData() {
   let data = {
-    kdjurusan: "kdjurusan",
-    nama: "nama",
-    jenjang: "jenjang",
+    kdjurusan: getValue("kdjurusan"),
+    nama: getValue("nama"),
+    jenjang: getValue("jenjang"),
   };
   postData(urlPOST, data, AmbilResponse);
 }
