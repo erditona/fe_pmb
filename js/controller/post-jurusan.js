@@ -16,7 +16,7 @@ function onClick(id, actionfunctionname) {
   document.getElementById(id).onclick = actionfunctionname;
 }
 
-export function getValue(id) {
+function getValue(id) {
   return document.getElementById(id).value;
 }
 
