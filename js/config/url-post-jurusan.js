@@ -1,4 +1,4 @@
-export let urlPOST = "https://ws-dito.herokuapp.com/insrt-jurusan";
+export let urlPOST = "https://ws-dito.herokuapp.com/ins-jurusan";
 
 export function AmbilResponse(result) {
   console.log(result); //menampilkan response API pada console
