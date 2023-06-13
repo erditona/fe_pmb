@@ -3,15 +3,16 @@ import { getRandomColor, getRandomColorName } from "https://bukulapak.github.io/
 import { isiTable, isiTable2, isiTable3, isiTable4 } from "../temp/table.js";
 
 //pendaftaran
-var Myvar = {};
+// var Myvar = {};
 export function isiTablePendaftaran(results) {
-  Myvar.length = results.length;
-  results.sort((a, b) => new Date(b.datetime) - new Date(a.datetime)); //mengurutkan berdasasrkan datetime in descending order
+  // Myvar.length = results.length;
+  // results.sort((a, b) => new Date(b.datetime) - new Date(a.datetime)); //mengurutkan berdasasrkan datetime in descending order
+  // results.forEach(isiRow);
+  // console.log(results);
   results.forEach(isiRow);
-  console.log(results);
 }
 function isiRow(value) {
-  document.getElementById("jmlpendaftar").innerHTML = "" + Myvar.length + " Data";
+  // document.getElementById("jmlpendaftar").innerHTML = "" + Myvar.length + " Data";
   let content = isiTable
     .replace("#KDPENDAFTAR#", value.kdpendaftar)
     .replace("#NAMA#", value.biodata.nama)
