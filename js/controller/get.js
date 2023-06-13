@@ -31,11 +31,11 @@ function isiRow(value) {
 
 //jurusan
 var MyvarJurusan = {};
-export function isiTableJurusan(results) {
+export function isiTableJurusan(resultsJurusan) {
   MyvarJurusan.length = results.length;
-  results.sort((a, b) => new Date(b.datetime) - new Date(a.datetime)); //mengurutkan berdasasrkan datetime in descending order
-  results.forEach(isiRow2);
-  console.log(results);
+  resultsJurusan.sort((a, b) => new Date(b.datetime) - new Date(a.datetime)); //mengurutkan berdasasrkan datetime in descending order
+  resultsJurusan.forEach(isiRow2);
+  console.log(resultsJurusan);
 }
 function isiRow2(value) {
   document.getElementById("jmljurusan").innerHTML = "" + MyvarJurusan.length + " Data";
