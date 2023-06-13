@@ -33,7 +33,7 @@ var MyvarJurusan = {};
 export function isiTableJurusan(results) {
   MyvarJurusan.length = results.length;
   results.sort((a, b) => new Date(b.datetime) - new Date(a.datetime)); //mengurutkan berdasasrkan datetime in descending order
-  results.forEach(isiRow);
+  results.forEach(isiRow2);
   console.log(results);
 }
 function isiRow2(value) {
