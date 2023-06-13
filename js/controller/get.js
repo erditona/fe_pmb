@@ -3,16 +3,15 @@ import { getRandomColor, getRandomColorName } from "https://bukulapak.github.io/
 import { isiTable, isiTable2, isiTable3, isiTable4 } from "../temp/table.js";
 
 //pendaftaran
-// var Myvar = {};
+var MyvarPendaftaran = {};
 export function isiTablePendaftaran(results) {
-  // Myvar.length = results.length;
-  // results.sort((a, b) => new Date(b.datetime) - new Date(a.datetime)); //mengurutkan berdasasrkan datetime in descending order
-  // results.forEach(isiRow);
-  // console.log(results);
+  MyvarPendaftaran.length = results.length;
+  results.sort((a, b) => new Date(b.datetime) - new Date(a.datetime)); //mengurutkan berdasasrkan datetime in descending order
   results.forEach(isiRow);
+  console.log(results);
 }
 function isiRow(value) {
-  // document.getElementById("jmlpendaftar").innerHTML = "" + Myvar.length + " Data";
+  document.getElementById("jmlpendaftar").innerHTML = "" + MyvarPendaftaran.length + " Data";
   let content = isiTable
     .replace("#KDPENDAFTAR#", value.kdpendaftar)
     .replace("#NAMA#", value.biodata.nama)
@@ -31,11 +30,11 @@ function isiRow(value) {
 
 //jurusan
 var MyvarJurusan = {};
-export function isiTableJurusan(resultsJurusan) {
+export function isiTableJurusan(results) {
   MyvarJurusan.length = results.length;
-  resultsJurusan.sort((a, b) => new Date(b.datetime) - new Date(a.datetime)); //mengurutkan berdasasrkan datetime in descending order
-  resultsJurusan.forEach(isiRow2);
-  console.log(resultsJurusan);
+  results.sort((a, b) => new Date(b.datetime) - new Date(a.datetime)); //mengurutkan berdasasrkan datetime in descending order
+  results.forEach(isiRow2);
+  console.log(results);
 }
 function isiRow2(value) {
   document.getElementById("jmljurusan").innerHTML = "" + MyvarJurusan.length + " Data";
