@@ -1,6 +1,6 @@
 import { postData } from "https://bukulapak.github.io/api/process.js";
 import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
-import { urlPOST, AmbilResponse } from "../config/url-post-jurusan";
+import { urlPOST, AmbilResponse } from "../config/url-post-jurusan.js";
 
 function pushData() {
   let data = {
