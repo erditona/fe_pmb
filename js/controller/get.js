@@ -2,8 +2,8 @@ import { addInner } from "https://bukulapak.github.io/element/process.js";
 import { getRandomColor, getRandomColorName } from "https://bukulapak.github.io/image/process.js";
 import { isiTable, isiTable2, isiTable3, isiTable4 } from "../temp/table.js";
 
+//pendaftaran
 var Myvar = {};
-
 export function isiTablePendaftaran(results) {
   Myvar.length = results.length;
   results.sort((a, b) => new Date(b.datetime) - new Date(a.datetime)); //mengurutkan berdasasrkan datetime in descending order
@@ -28,10 +28,16 @@ function isiRow(value) {
   addInner("iniTabel", content);
 }
 
+//jurusan
+var MyvarJurusan = {};
 export function isiTableJurusan(results) {
-  results.forEach(isiRow2);
+  MyvarJurusan.length = results.length;
+  results.sort((a, b) => new Date(b.datetime) - new Date(a.datetime)); //mengurutkan berdasasrkan datetime in descending order
+  results.forEach(isiRow);
+  console.log(results);
 }
 function isiRow2(value) {
+  document.getElementById("jmljurusan").innerHTML = "" + MyvarJurusan.length + " Data";
   let content = isiTable2
     .replace("#KDJURUSAN#", value.kdjurusan)
     .replace("#NAMA#", value.nama)
