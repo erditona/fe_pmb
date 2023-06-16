@@ -3,18 +3,13 @@ import { onClick, getValue } from "https://bukulapak.github.io/element/process.j
 import { urlPOST, AmbilResponse } from "../config/url-post-jurusan.js";
 
 function pushData() {
-  if (kadjurusanValue === "" || namaValue === "" || jenjangValue === "") {
-    console.log("Please fill in all fields");
-    return; // Stop further execution if the form is not valid
-  } else {
-    let data = {
-      kdjurusan: getValue("kdjurusan"),
-      nama: getValue("nama"),
-      jenjang: getValue("jenjang"),
-    };
-    console.log(data);
-    postData(urlPOST, data, AmbilResponse);
-  }
+  let data = {
+    kdjurusan: getValue("kdjurusan"),
+    nama: getValue("nama"),
+    jenjang: getValue("jenjang"),
+  };
+  console.log(data);
+  postData(urlPOST, data, AmbilResponse);
 }
 
 onClick("button", pushData);
