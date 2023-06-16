@@ -9,6 +9,10 @@ function pushData() {
   let jenjangValue = getValue("jenjang");
 
   // Perform form validation
+  if ((namaValue === "") | (kadjurusanValue === "") | (jenjangValue === "")) {
+    document.getElementById("status").innerHTML = "Data Tidak Boleh Kosong!";
+    return;
+  }
   if (namaValue === "") {
     document.getElementById("status").innerHTML = "Nama Tidak Boleh Kosong!";
     return;
