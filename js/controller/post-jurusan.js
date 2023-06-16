@@ -16,18 +16,18 @@ import { urlPOST, AmbilResponse } from "../config/url-post-jurusan.js";
 
 function pushData() {
   // Get the form values
-  let kdjurusanValue = getValue("kdjurusan");
+  let kadjurusanValue = getValue("kdjurusan");
   let namaValue = getValue("nama");
   let jenjangValue = getValue("jenjang");
 
   // Perform form validation
-  if (kdjurusanValue === "" || namaValue === "" || jenjangValue === "") {
-    console.log("Lengkapi Semua Kolom");
+  if (kadjurusanValue === "" || namaValue === "" || jenjangValue === "") {
+    console.log("Please fill in all fields");
     return; // Stop further execution if the form is not valid
   }
 
   let data = {
-    kdjurusan: kdjurusanValue,
+    kdjurusan: kadjurusanValue,
     nama: namaValue,
     jenjang: jenjangValue,
   };
