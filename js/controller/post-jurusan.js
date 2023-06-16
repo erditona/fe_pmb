@@ -36,7 +36,7 @@ function pushData() {
 
   // Perform form validation
   if (kadjurusanValue === "" || namaValue === "" || jenjangValue === "") {
-    console.log("Please fill in all fields");
+    alert("Tolong Lengkapi Semua Kolom");
     return; // Stop further execution if the form is not valid
   }
 
