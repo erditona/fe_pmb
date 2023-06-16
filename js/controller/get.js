@@ -30,11 +30,11 @@ function isiRow(value) {
 
 //jurusan
 var MyvarJurusan = {};
-export function isiTableJurusan(results) {
-  MyvarJurusan.length = results.length;
-  results.sort((a, b) => new Date(b.datetime) - new Date(a.datetime)); //mengurutkan berdasasrkan datetime in descending order
-  results.forEach(isiRow2);
-  console.log(results);
+export function isiTableJurusan(results2) {
+  MyvarJurusan.length = results2.length;
+  results2.sort((a, b) => new Date(b.datetime) - new Date(a.datetime)); //mengurutkan berdasasrkan datetime in descending order
+  results2.forEach(isiRow2);
+  console.log(results2);
 }
 function isiRow2(value) {
   document.getElementById("jmljurusan").innerHTML = "" + MyvarJurusan.length + " Data";
@@ -49,10 +49,10 @@ function isiRow2(value) {
 
 //Sekolah
 var MyvarSekolah = {};
-export function isiTableSekolah(results) {
-  MyvarSekolah.length = results.length;
-  results.forEach(isiRow3);
-  console.log(results);
+export function isiTableSekolah(results3) {
+  MyvarSekolah.length = results3.length;
+  results3.forEach(isiRow3);
+  console.log(results3);
 }
 function isiRow3(value) {
   document.getElementById("jmlsekolah").innerHTML = "" + MyvarSekolah.length + " Data";
@@ -68,9 +68,9 @@ function isiRow3(value) {
 
 //Camaba
 var MyvarCamaba = {};
-export function isiTableCamaba(results) {
-  MyvarCamaba.length = results.length;
-  results.forEach(isiRow4);
+export function isiTableCamaba(results4) {
+  MyvarCamaba.length = results4.length;
+  results4.forEach(isiRow4);
 }
 function isiRow4(value) {
   document.getElementById("jmlcamaba").innerHTML = "" + MyvarCamaba.length + " Data";
