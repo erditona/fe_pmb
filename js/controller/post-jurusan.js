@@ -28,26 +28,26 @@ onClick("button", pushData);
 // }
 // onClick("button", pushData);
 
-// function pushData() {
-//   // Get the form values
-//   let kadjurusanValue = getValue("kdjurusan");
-//   let namaValue = getValue("nama");
-//   let jenjangValue = getValue("jenjang");
+function pushData() {
+  // Get the form values
+  let kadjurusanValue = getValue("kdjurusan");
+  let namaValue = getValue("nama");
+  let jenjangValue = getValue("jenjang");
 
-//   // Perform form validation
-//   if (kadjurusanValue === "" || namaValue === "" || jenjangValue === "") {
-//     console.log("Please fill in all fields");
-//     return; // Stop further execution if the form is not valid
-//   }
+  // Perform form validation
+  if (kadjurusanValue === "" || namaValue === "" || jenjangValue === "") {
+    console.log("Please fill in all fields");
+    return; // Stop further execution if the form is not valid
+  }
 
-//   let data = {
-//     kdjurusan: kadjurusanValue,
-//     nama: namaValue,
-//     jenjang: jenjangValue,
-//   };
+  let data = {
+    kdjurusan: kadjurusanValue,
+    nama: namaValue,
+    jenjang: jenjangValue,
+  };
 
-//   console.log(data);
-//   postData(urlPOST, data, AmbilResponse);
-// }
+  console.log(data);
+  postData(urlPOST, data, AmbilResponse);
+}
 
-// onClick("button", pushData);
+onClick("button", pushData);
