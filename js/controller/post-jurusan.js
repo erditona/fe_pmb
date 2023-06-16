@@ -12,8 +12,13 @@ function pushData() {
   if (namaValue === "") {
     document.getElementById("status").innerHTML = "Nama Tidak Boleh Kosong!";
     return;
-  } else if (kadjurusanValue === "" || jenjangValue === "") {
-    document.getElementById("status").innerHTML = "Tolong Lengkapi Semua Kolom!";
+  }
+  if (kadjurusanValue === "") {
+    document.getElementById("status").innerHTML = "Jurusan Tidak Boleh Kosong!";
+    return; // Stop further execution if the form is not valid
+  }
+  if (jenjangValue === "") {
+    document.getElementById("status").innerHTML = "Jenjang Tidak Boleh Kosong!";
     return; // Stop further execution if the form is not valid
   }
 
