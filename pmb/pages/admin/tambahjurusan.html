@@ -402,16 +402,19 @@
                         </div>
                         <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
                           <form>
-                            <div id="status" class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-pink-500">
+                            <div class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-pink-500">
                               <span class="text-xl inline-block mr-5 align-middle">
                                 <i class="fas fa-bell"></i>
                               </span>
-                              <span class="inline-block align-middle mr-8"></span>
+                              <span class="inline-block align-middle mr-8">
+                                <b class="capitalize">pink!</b> This is a pink alert - check it out!
+                              </span>
                               <button class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none" onclick="closeAlert(event)">
                                 <span>×</span>
+                            
                               </button>
                             </div>
-                            <!-- <div id="status" class="text-center text-yellow-200 py-1.5 mb-5 bg-red-600 rounded-md"></div> -->
+                            <div id="status" class="text-center text-yellow-200 py-1.5 mb-5 bg-red-600 rounded-md"></div>
                             <div class="relative w-full mb-3">
                               <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Kode Jurusan</label>
                               <input
@@ -535,15 +538,5 @@
 
     //post
     <script type="module" src="../../../js/controller/post-jurusan.js"></script>
-    //alert
-    <script>
-      function closeAlert(event){
-        let element = event.target;
-        while(element.nodeName !== "BUTTON"){
-          element = element.parentNode;
-        }
-        element.parentNode.parentNode.removeChild(element.parentNode);
-      }
-    </script>
   </body>
 </html>
