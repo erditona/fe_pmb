@@ -3,13 +3,13 @@ import { onClick, getValue } from "https://bukulapak.github.io/element/process.j
 import { urlPOST, AmbilResponse } from "../config/url-post-jurusan.js";
 
 function pushData() {
-  let data = {
-    kdjurusan: getValue("kdjurusan"),
-    nama: getValue("nama"),
-    jenjang: getValue("jenjang"),
-  };
-  console.log(data);
   if (kdjurusan || nama || jenjang) {
+    let data = {
+      kdjurusan: getValue("kdjurusan"),
+      nama: getValue("nama"),
+      jenjang: getValue("jenjang"),
+    };
+    console.log(data);
     postData(urlPOST, data, AmbilResponse);
   } else {
     document.getElementById("status").innerHTML = "Lengkasi Semua Kolom!";
