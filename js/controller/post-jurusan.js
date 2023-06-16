@@ -36,7 +36,7 @@ function pushData() {
 
   // Perform form validation
   if (kadjurusanValue === "" || namaValue === "" || jenjangValue === "") {
-    alert("Tolong Lengkapi Semua Kolom");
+    document.getElementById("status").innerHTML = "Tolong Lengkapi Semua Kolom !";
     return; // Stop further execution if the form is not valid
   }
 
