@@ -401,7 +401,8 @@
                           <hr class="mt-6 border-b-1 border-blueGray-300" />
                         </div>
                         <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-                          <form>
+                          <form name="FtJurusan">
+                            <div id="status" class="text-center text-yellow-200 py-1.5 mb-5 bg-red-600 rounded-md"></div>
                             <div class="relative w-full mb-3">
                               <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Kode Jurusan</label>
                               <input
@@ -416,6 +417,7 @@
                             <div class="relative w-full mb-3">
                               <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"> Nama </label>
                               <input
+                                name="nama"
                                 id="nama"
                                 type="text"
                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"

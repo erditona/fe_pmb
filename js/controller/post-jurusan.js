@@ -9,7 +9,11 @@ function pushData() {
     jenjang: getValue("jenjang"),
   };
   console.log(data);
-  postData(urlPOST, data, AmbilResponse);
+  if (kdjurusan || nama || jenjang) {
+    postData(urlPOST, data, AmbilResponse);
+  } else {
+    document.getElementById("status").innerHTML = "Lengkapi Semua Kolom!";
+  }
 }
 
 onClick("button", pushData);
