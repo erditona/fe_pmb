@@ -47,10 +47,15 @@ function isiRow2(value) {
   addInner("TabelJurusan", content);
 }
 
+//Sekolah
+var MyvarSekolah = {};
 export function isiTableSekolah(results) {
+  MyvarSekolah.length = results.length;
   results.forEach(isiRow3);
+  console.log(results);
 }
 function isiRow3(value) {
+  document.getElementById("jmlsekolah").innerHTML = "" + MyvarJurusan.length + " Data";
   let content = isiTable3
     .replace("#KDSEKOLAH#", value.kdsekolah)
     .replace("#NAMA#", value.nama)
@@ -61,10 +66,14 @@ function isiRow3(value) {
   addInner("TabelSekolah", content);
 }
 
+//Camaba
+var MyvarSekolah = {};
 export function isiTableCamaba(results) {
+  MyvarSekolah.length = results.length;
   results.forEach(isiRow4);
 }
 function isiRow4(value) {
+  document.getElementById("jmlcamaba").innerHTML = "" + MyvarJurusan.length + " Data";
   let content = isiTable4
     .replace("#KTP#", value.ktp)
     .replace("#NAMA#", value.nama)
