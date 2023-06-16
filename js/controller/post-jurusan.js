@@ -18,7 +18,7 @@ function pushData() {
     cek = false;
   }
   if (kadjurusanValue === "") {
-    document.getElementById("status").innerHTML = "Jurusan Tidak Boleh Kosong!";
+    document.getElementById("status").innerHTML = "Kode Jurusan Tidak Boleh Kosong!";
     cek = false; // Stop further execution if the form is not valid
   }
   if (jenjangValue === "") {
