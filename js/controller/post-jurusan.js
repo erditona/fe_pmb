@@ -11,6 +11,7 @@ function pushData() {
   // Perform form validation
   if (namaValue === "") {
     document.getElementById("status").innerHTML = "Nama Tidak Boleh Kosong!";
+    return;
   } else if (kadjurusanValue === "" || jenjangValue === "") {
     document.getElementById("status").innerHTML = "Tolong Lengkapi Semua Kolom!";
     return; // Stop further execution if the form is not valid
