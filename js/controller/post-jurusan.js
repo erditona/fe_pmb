@@ -9,11 +9,17 @@ function pushData() {
     jenjang: getValue("jenjang"),
   };
   console.log(data);
-  if (kdjurusan || nama || jenjang) {
-    postData(urlPOST, data, AmbilResponse);
+  postData(urlPOST, data, AmbilResponse);
+}
+
+function validateForm() {
+  let nama = document.forms["FtJurusan"]["nama"].value;
+  if (nama == "") {
+    alert("Name must be filled out");
+    return false;
   } else {
-    document.getElementById("status").innerHTML = "Lengkapi Semua Kolom!";
+    pushData();
   }
 }
 
-onClick("button", pushData);
+onClick("button", validateForm);
