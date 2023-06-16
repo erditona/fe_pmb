@@ -9,8 +9,10 @@ function pushData() {
   let jenjangValue = getValue("jenjang");
 
   // Perform form validation
-  if (kadjurusanValue === "" || namaValue === "" || jenjangValue === "") {
-    document.getElementById("status").innerHTML = "Tolong Lengkapi Semua Kolom !";
+  if (namaValue === "") {
+    document.getElementById("status").innerHTML = "Nama Tidak Boleh Kosong!";
+  } else if (kadjurusanValue === "" || jenjangValue === "") {
+    document.getElementById("status").innerHTML = "Tolong Lengkapi Semua Kolom!";
     return; // Stop further execution if the form is not valid
   }
 
