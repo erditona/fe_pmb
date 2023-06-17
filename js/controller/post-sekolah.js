@@ -11,7 +11,7 @@ function pushData() {
 
   // Perform form validation
   if (isNaN(kdsekolahValue) || kdsekolahValue < 0 || namaValue === "" || phoneNumberValue === "" || alamatValue === "") {
-    document.getElementById("status").innerHTML = "Tolong Lengkapi Semua Kolom!";
+    document.getElementById("status").innerHTML = "Data Tidak Boleh Kosong!";
     return; // Stop further execution if the form is not valid
   }
 
