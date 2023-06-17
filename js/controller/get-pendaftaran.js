@@ -6,7 +6,6 @@ import { isiTable } from "../temp/table.js";
 var MyvarPendaftaran = {};
 export function isiTablePendaftaran(results) {
   MyvarPendaftaran.length = results.length;
-  results.sort((a, b) => new Date(b.datetimeCreated) - new Date(a.datetimeCreated)); //mengurutkan berdasasrkan datetime in descending order
   results.forEach(isiRow);
   console.log(results);
 }

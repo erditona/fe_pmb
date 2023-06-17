@@ -7,6 +7,7 @@ var MyvarCamaba = {};
 export function isiTableCamaba(results4) {
   MyvarCamaba.length = results4.length;
   results4.forEach(isiRow4);
+  console.log(results2);
 }
 function isiRow4(value) {
   document.getElementById("jmlcamaba").innerHTML = "" + MyvarCamaba.length + " Data";
