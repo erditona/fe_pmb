@@ -99,7 +99,7 @@ export let isiTable2 = `
     </a>
     <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48" id="table-light-1-dropdown">
       <button onclick="editData()">Edit</button>
-      <button type"button" id="del_button" onclick="deleteData('#IDHAPUS')">Delete</button>
+      <button type"button" id="del_button" onclick="deleteData('#IDHAPUS#')">Delete</button>
     </div>
 
     </th>
