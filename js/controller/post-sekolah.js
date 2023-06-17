@@ -22,8 +22,8 @@ function pushData() {
   }
 
   // Additional validation for phone number
-  if (!/^0[0-9]{11}$/.test(phoneNumberValue)) {
-    document.getElementById("status").innerHTML = "Format Nomor Telepon Salah! Harap masukkan 12 angka dan diawali dengan 0.";
+  if (!/^\d{10,13}$/.test(phoneNumberValue)) {
+    document.getElementById("status").innerHTML = "Format Nomor Telepon Salah! Harap masukkan 10-13 angka.";
     return; // Stop further execution if phone number is not valid
   }
 

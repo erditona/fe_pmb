@@ -79,14 +79,14 @@ function validateInput2(input) {
 //validasi Phone_number
 function validatePhoneNumber(phoneNumber) {
   const sanitizedPhoneNumber = phoneNumber.replace(/\D/g, ""); // Remove non-digit characters
-  const limitedPhoneNumber = sanitizedPhoneNumber.slice(0, 12); // Limit to a maximum of 12 digits
+  const limitedPhoneNumber = sanitizedPhoneNumber.slice(0, 13); // Limit to a maximum of 12 digits
   document.getElementById("phone_number").value = limitedPhoneNumber; // Update the input value
 
-  if (sanitizedPhoneNumber.length > 12 || !sanitizedPhoneNumber.startsWith("0")) {
+  if (sanitizedPhoneNumber.length > 13 || !sanitizedPhoneNumber.startsWith("0")) {
     if (!sanitizedPhoneNumber.startsWith("0")) {
       document.getElementById("status").textContent = "Nomor telepon harus diawali dengan angka 0.";
     } else {
-      document.getElementById("status").textContent = "Format nomor telepon tidak valid. Harap masukkan angka maksimal 12 digit.";
+      document.getElementById("status").textContent = "Format nomor telepon tidak valid. Harap masukkan angka maksimal 13 digit.";
     }
   } else {
     document.getElementById("status").textContent = "";
