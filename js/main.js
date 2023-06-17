@@ -92,3 +92,16 @@ function validatePhoneNumber(phoneNumber) {
     document.getElementById("status").textContent = "";
   }
 }
+
+// Generate kode pendaftaran secara otomatis
+function generateKodePendaftaran() {
+  var prefix = "202301";
+  var timestamp = Date.now();
+  var kodePendaftaran = prefix + timestamp;
+
+  return kodePendaftaran;
+}
+
+// Set nilai kode pendaftaran pada input field
+var kodePendaftaranInput = document.getElementById("kode-pendaftaran");
+kodePendaftaranInput.value = generateKodePendaftaran();
