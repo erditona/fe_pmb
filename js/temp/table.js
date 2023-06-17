@@ -101,7 +101,7 @@ export let isiTable2 = `
     <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48" id="table-light-1-dropdown">
       <ul class="space-y-2">
         <li>
-          <a href="detail-jurusan.html" class="btn-edit bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full inline-block">Edit</a>
+          <a href="detail-jurusan.html" class="btn-edit bg-blue-500 hover:bg-blue-700 text-white text-center font-bold py-2 px-4 rounded w-full inline-block">Edit</a>
         </li>
         <li>
           <button type"button" id="del_button" onclick="deleteData('#IDHAPUS#')" class="btn-delete bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded w-full inline-block">Delete</button>
