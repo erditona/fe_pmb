@@ -17,6 +17,7 @@ function isiRow3(value) {
     .replace("#NAMA#", value.nama)
     .replace("#NOHP#", value.phone_number)
     .replace("#ALAMAT#", value.alamat)
+    .replace("#IDHAPUS#", value._id)
     .replace("#WARNA#", getRandomColor())
     .replace(/#WARNALOGO#/g, getRandomColorName());
   addInner("TabelSekolah", content);
