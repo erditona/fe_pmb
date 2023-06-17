@@ -98,10 +98,6 @@ export let isiTable2 = `
     <i class="fas fa-ellipsis-v"></i>
     </a>
     <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48" id="table-light-1-dropdown">
-      <button onclick="editData()">Edit</button>
-      <button type"button" id="del_button" onclick="deleteData('#IDHAPUS#')">Delete</button>
-    </div>
-    <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48" id="table-light-1-dropdown">
       <ul class="space-y-2">
         <li>
           <a href="detail-jurusan.html" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</a>
