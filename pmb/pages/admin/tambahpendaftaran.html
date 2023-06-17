@@ -417,12 +417,23 @@
                             </div>
 
                             <div class="relative w-full mb-3">
-                              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"> Nama Jurusan</label>
+                              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Nomor Kartu Tanda Penduduk</label>
+                              <input
+                                id="ktp"
+                                type="number"
+                                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                placeholder="Nomer KTP"
+                                required
+                              />
+                            </div>
+
+                            <div class="relative w-full mb-3">
+                              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"> Nama Lengkap</label>
                               <input
                                 id="nama"
                                 type="text"
                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                placeholder="Nama Jurusan"
+                                placeholder="Nama Lengkap"
                                 required
                                 maxlength="30"
                                 oninput="this.value = capitalizeEachWord(this.value);"
@@ -431,9 +442,75 @@
                             </div>
 
                             <div class="relative w-full mb-3">
-                              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Jenjang</label>
-                              <select id="jenjang" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required>
-                                <option value="">Pilih Jenjang</option>
+                                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Nomor Telepon</label>
+                                <input
+                                  id="phone_number"
+                                  type="tel"
+                                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                  placeholder="Nomor Telepon"
+                                  required
+                                  oninput="validatePhoneNumber(this.value)"
+                                  autocomplete="off"
+                                />
+                              </div>
+  
+                              <div class="relative w-full mb-3">
+                                  <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Alamat</label>
+                                  <input
+                                    id="alamat"
+                                    type="text"
+                                    class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                    placeholder="Alamat"
+                                    required
+                                    maxlength="30"
+                                    autocomplete="off"
+                                  />
+                                </div>
+
+                            <div class="relative w-full mb-3">
+                              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Asal Sekolah</label>
+                              <select id="asalsekolah" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required>
+                                <option value="">Pilih Asal Sekolah</option>
+                                <option value="Diploma 4">Diploma 4</option>
+                                <option value="Diploma 3">Diploma 3</option>
+                                <option value="Sarjana 1">Sarjana 1</option>
+                              </select>
+                            </div>
+
+                            <div class="relative w-full mb-3">
+                              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Jurusan Yang Ingin Dimasuki</label>
+                              <select id="jurusan" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required>
+                                <option value="">Pilih Jurusan</option>
+                                <option value="Diploma 4">Diploma 4</option>
+                                <option value="Diploma 3">Diploma 3</option>
+                                <option value="Sarjana 1">Sarjana 1</option>
+                              </select>
+                            </div>
+
+                            <div class="relative w-full mb-3">
+                              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Jalur Pendaftaran</label>
+                              <select id="jalur" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required>
+                                <option value="">Pilih Jalur</option>
+                                <option value="Diploma 4">Diploma 4</option>
+                                <option value="Diploma 3">Diploma 3</option>
+                                <option value="Sarjana 1">Sarjana 1</option>
+                              </select>
+                            </div>
+
+                            <div class="relative w-full mb-3">
+                              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Alasan Masuk ULBI</label>
+                              <select id="alulbi" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required>
+                                <option value="">Pilih Alasan</option>
+                                <option value="Diploma 4">Diploma 4</option>
+                                <option value="Diploma 3">Diploma 3</option>
+                                <option value="Sarjana 1">Sarjana 1</option>
+                              </select>
+                            </div>
+
+                            <div class="relative w-full mb-3">
+                              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Alasan Pilih Jurusan</label>
+                              <select id="aljurusan" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required>
+                                <option value="">Pilih Alasan</option>
                                 <option value="Diploma 4">Diploma 4</option>
                                 <option value="Diploma 3">Diploma 3</option>
                                 <option value="Sarjana 1">Sarjana 1</option>
@@ -530,6 +607,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     //post
-    <script type="module" src="../../../js/controller/post-jurusan.js"></script>   
+    <script type="module" src="../../../js/controller/post-jurusan.js"></script>  
+    
+    //generatekdpendaftaran
+    <script src="../../../js/generateKdpendaftaran.js"></script>
+
   </body>
 </html>

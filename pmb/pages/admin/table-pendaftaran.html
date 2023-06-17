@@ -494,17 +494,5 @@
 
     //Delete
     <script src="../../../js/controller/delete-pendaftaran.js"></script>
-
-    <script>
-      function generateKodePendaftaran() {
-        var prefix = "202301";
-        var timestamp = Date.now();
-        var kodePendaftaran = prefix + timestamp;
-        return kodePendaftaran;
-      }
-
-      var kdpendaftaranInput = document.getElementById("kdpendaftaran");
-      kdpendaftaranInput.value = generateKodePendaftaran();
-    </script>
   </body>
 </html>
