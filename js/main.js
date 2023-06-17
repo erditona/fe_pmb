@@ -56,3 +56,32 @@ function capitalizeEachWord(value) {
   // Join the capitalized words back into a string
   return words.join(" ");
 }
+
+//validasiInputMax4Angka
+function validateInput2(input) {
+  // Remove non-digit characters
+  let sanitizedValue = input.value.replace(/\D/g, "");
+
+  // Limit to a maximum of 4 digits
+  sanitizedValue = sanitizedValue.slice(0, 4);
+
+  // Update the input value
+  input.value = sanitizedValue;
+}
+
+//validasi Phone_number
+function validatePhoneNumber(phoneNumber) {
+  const sanitizedPhoneNumber = phoneNumber.replace(/\D/g, ""); // Remove non-digit characters
+  const limitedPhoneNumber = sanitizedPhoneNumber.slice(0, 12); // Limit to a maximum of 12 digits
+  document.getElementById("phone_number").value = limitedPhoneNumber; // Update the input value
+
+  if (sanitizedPhoneNumber.length > 12 || !sanitizedPhoneNumber.startsWith("0")) {
+    if (!sanitizedPhoneNumber.startsWith("0")) {
+      document.getElementById("status").textContent = "Nomor telepon harus diawali dengan angka 0.";
+    } else {
+      document.getElementById("status").textContent = "Format nomor telepon tidak valid. Harap masukkan angka maksimal 12 digit.";
+    }
+  } else {
+    document.getElementById("status").textContent = "";
+  }
+}
