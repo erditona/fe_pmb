@@ -425,8 +425,10 @@
                                 id="nama"
                                 type="text"
                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                placeholder="Nama"
+                                placeholder="Nama Jurusan"
                                 required
+                                maxlength="30"
+                                oninput="this.value = capitalizeEachWord(this.value);"
                               />
                             </div>
 
@@ -530,6 +532,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     //post
-    <script type="module" src="../../../js/controller/post-jurusan.js"></script>
+    <script type="module" src="../../../js/controller/post-jurusan.js"></script>   
   </body>
 </html>
