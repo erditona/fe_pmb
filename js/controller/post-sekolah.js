@@ -15,6 +15,18 @@ function pushData() {
     return; // Stop further execution if the form is not valid
   }
 
+  // Additional validation for kdsekolah (4 digits)
+  if (!/^[0-9]{1,4}$/.test(kdsekolahValue.toString())) {
+    document.getElementById("status").innerHTML = "Format Kode Sekolah Salah! Harap masukkan 4 angka.";
+    return; // Stop further execution if kdsekolah is not valid
+  }
+
+  // Additional validation for phone number
+  if (!/^0[0-9]{1,11}$/.test(phoneNumberValue)) {
+    document.getElementById("status").innerHTML = "Format Nomor Telepon Salah! Harap masukkan 12 angka dan diawali dengan 0.";
+    return; // Stop further execution if phone number is not valid
+  }
+
   // Clear the status message if all fields are valid
   document.getElementById("status").innerHTML = "";
 

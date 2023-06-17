@@ -57,7 +57,7 @@ function capitalizeEachWord(value) {
   return words.join(" ");
 }
 
-//validasiInputMax4Angka
+//validasiInputKodeSekolah
 function validateInput2(input) {
   // Remove non-digit characters
   let sanitizedValue = input.value.replace(/\D/g, "");
@@ -67,6 +67,13 @@ function validateInput2(input) {
 
   // Update the input value
   input.value = sanitizedValue;
+
+  // Validate the input
+  if (sanitizedValue.length !== 4) {
+    document.getElementById("status").innerHTML = "Kode Sekolah harus terdiri dari 4 angka.";
+  } else {
+    document.getElementById("status").innerHTML = "";
+  }
 }
 
 //validasi Phone_number
