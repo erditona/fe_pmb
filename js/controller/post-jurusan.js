@@ -6,7 +6,7 @@ function pushData() {
   // Get the form values
   let kadjurusanValue = getValue("kdjurusan");
   let namaValue = getValue("nama");
-  let jenjangValue = getValue("jenjang");
+  let jenjangValue = document.getElementById("jenjang").value; // Get the selected value from the dropdown
 
   // Perform form validation
   if ((namaValue === "") & (kadjurusanValue === "") & (jenjangValue === "")) {
