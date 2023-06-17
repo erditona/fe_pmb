@@ -98,9 +98,10 @@ export let isiTable2 = `
     <i class="fas fa-ellipsis-v"></i>
     </a>
     <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48" id="table-light-1-dropdown">
-      <a href="#pablo" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Update</a
-      ><a href="#pablo" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Delete</a>
+      <button onclick="editData()">Edit</button>
+      <button type"button" id="del_button" onclick="deleteData('#IDHAPUS')">Delete</button>
     </div>
+
     </th>
   </tr>
 `;
