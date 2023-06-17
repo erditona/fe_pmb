@@ -16,8 +16,8 @@ function pushData() {
   }
 
   // Additional validation for kdsekolah (4 digits)
-  if (!/^[0-9]{1,4}$/.test(kdsekolahValue.toString())) {
-    document.getElementById("status").innerHTML = "Format Kode Sekolah Salah! Harap masukkan 4 angka.";
+  if (!/^[0-9]{4}$/.test(kdsekolahValue.toString())) {
+    document.getElementById("status").innerHTML = "Format Kode Sekolah Salah! Harap masukkan tepat 4 angka.";
     return; // Stop further execution if kdsekolah is not valid
   }
 

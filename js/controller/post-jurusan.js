@@ -26,6 +26,12 @@ function pushData() {
     cek = false; // Stop further execution if the form is not valid
   }
 
+  // Additional validation for kdjurusan (4 digits)
+  if (!/^[0-9]{4}$/.test(kadjurusanValue.toString())) {
+    document.getElementById("status").innerHTML = "Format Kode Jurusan Salah! Harap masukkan tepat 4 angka.";
+    return; // Stop further execution if kdsekolah is not valid
+  }
+
   // if (namaValue === "") {
   //   document.getElementById("status").innerHTML = "Nama Tidak Boleh Kosong!";
   //   return;
