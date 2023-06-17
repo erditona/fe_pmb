@@ -1,3 +1,4 @@
+// Fungsi untuk menghasilkan kode pendaftaran
 function generateKodePendaftaran() {
   // Mendapatkan tanggal sekarang
   var currentDate = new Date();
@@ -10,22 +11,27 @@ function generateKodePendaftaran() {
 
   // Mengambil angka acak berurutan dari localStorage
   var randomNum = localStorage.getItem("randomNum");
-  // Jika angka acak belum ada, inisialisasi dengan 1
-  if (!randomNum) {
-    randomNum = 1;
-  } else {
-    // Jika angka acak sudah ada, tambahkan 1
-    randomNum = parseInt(randomNum) + 1;
+  // Jika angka acak belum ada atau lebih kecil dari tanggal sekarang, inisialisasi dengan tanggal sekarang
+  if (!randomNum || parseInt(randomNum.substr(0, 6)) < parseInt(day + month + year)) {
+    randomNum = day + month + year + "01";
   }
-  // Simpan angka acak berurutan ke localStorage
-  localStorage.setItem("randomNum", randomNum);
 
   // Menggabungkan semua bagian untuk membentuk kode pendaftaran
-  var kodePendaftaran = day + month + year + randomNum.toString().padStart(2, "0");
+  var kodePendaftaran = randomNum;
   return kodePendaftaran;
 }
 
 // Mendapatkan elemen input kode pendaftaran
 var kdpendaftaranInput = document.getElementById("kdpendaftaran");
-// Mengisi nilai input kode pendaftaran dengan kode yang dihasilkan
-kdpendaftaranInput.value = generateKodePendaftaran();
+
+// Cek apakah kode pendaftaran sudah ada di localStorage
+var storedKodePendaftaran = localStorage.getItem("kdpendaftaran");
+if (storedKodePendaftaran) {
+  kdpendaftaranInput.value = storedKodePendaftaran;
+} else {
+  // Jika belum ada, generate kode pendaftaran baru
+  var generatedKodePendaftaran = generateKodePendaftaran();
+  kdpendaftaranInput.value = generatedKodePendaftaran;
+  // Simpan kode pendaftaran ke localStorage
+  localStorage.setItem("kdpendaftaran", generatedKodePendaftaran);
+}
