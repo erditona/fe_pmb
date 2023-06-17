@@ -5,6 +5,7 @@ import { isiTable4 } from "../temp/table.js";
 //Camaba
 var MyvarCamaba = {};
 export function isiTableCamaba(results4) {
+  results2.reverse();
   MyvarCamaba.length = results4.length;
   results4.forEach(isiRow4);
   console.log(results2);
