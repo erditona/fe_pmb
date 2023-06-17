@@ -5,7 +5,7 @@ import { isiTable3 } from "../temp/table.js";
 //Sekolah
 var MyvarSekolah = {};
 export function isiTableSekolah(results3) {
-  results2.reverse();
+  results3.reverse();
   MyvarSekolah.length = results3.length;
   results3.forEach(isiRow3);
   console.log(results3);
