@@ -7,7 +7,7 @@ fetch("https://ws-dito.herokuapp.com/jurusan")
     // Generate options for each data item
     data.forEach((item) => {
       const option = document.createElement("option");
-      option.value = item.nama;
+      option.value = item._id;
       option.text = item.nama;
       jurusanDropdown.appendChild(option);
     });
@@ -23,7 +23,7 @@ fetch("https://ws-dito.herokuapp.com/sekolah")
     // Generate options for each data item
     data.forEach((item) => {
       const option = document.createElement("option");
-      option.value = item.nama;
+      option.value = item._id;
       option.text = item.nama;
       asalSekolahDropdown.appendChild(option);
     });
