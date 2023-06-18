@@ -23,20 +23,25 @@
 
 // // Mendapatkan elemen input kode pendaftaran
 // var kdpendaftaranInput = document.getElementById("kdpendaftaran");
+// // Mengisi nilai input kode pendaftaran dengan kode yang dihasilkan
+// kdpendaftaranInput.value = generateKodePendaftaran();
 
-// // Cek apakah kode pendaftaran sudah ada di localStorage
-// var storedKodePendaftaran = localStorage.getItem("kdpendaftaran");
-// if (storedKodePendaftaran) {
-//   kdpendaftaranInput.value = storedKodePendaftaran;
-// } else {
-//   // Jika belum ada, generate kode pendaftaran baru
-//   var generatedKodePendaftaran = generateKodePendaftaran();
-//   kdpendaftaranInput.value = generatedKodePendaftaran;
-//   // Simpan kode pendaftaran ke localStorage
-//   localStorage.setItem("kdpendaftaran", generatedKodePendaftaran);
-// }
+// // Simpan angka acak berurutan ke localStorage
+// localStorage.setItem("randomNum", kdpendaftaranInput.value);
 
-// Fungsi untuk menghasilkan kode pendaftaran
+// Fungsi untuk memeriksa apakah kode pendaftaran sudah terdaftar di API
+async function isKodePendaftaranTerdaftar(kodePendaftaran) {
+  try {
+    const response = await fetch(`https://ws-dito.herokuapp.com/pendaftaran/${kodePendaftaran}`);
+    const data = await response.json();
+    return response.ok && data.length > 0;
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
+}
+
+// Fungsi untuk menghasilkan kode pendaftaran yang belum terdaftar
 async function generateKodePendaftaran() {
   // Mendapatkan tanggal sekarang
   var currentDate = new Date();
@@ -51,86 +56,34 @@ async function generateKodePendaftaran() {
   var randomNum = localStorage.getItem("randomNum");
   // Jika angka acak belum ada atau lebih kecil dari tanggal sekarang, inisialisasi dengan tanggal sekarang
   if (!randomNum || parseInt(randomNum.substr(0, 6)) < parseInt(day + month + year)) {
-    randomNum = day + month + year + "00";
+    randomNum = day + month + year + "01";
   }
 
-  // Mendapatkan angka urutan dari angka acak
-  var sequence = parseInt(randomNum.substr(-2));
-  sequence += 1;
-
   // Menggabungkan semua bagian untuk membentuk kode pendaftaran
-  var kodePendaftaran = day + month + year + sequence.toString().padStart(2, "0");
+  var kodePendaftaran = randomNum;
 
-  // Simpan angka acak berurutan ke localStorage
-  localStorage.setItem("randomNum", kodePendaftaran);
-
-  // Cek keberadaan kode pendaftaran pada API
-  var isCodeExists = await checkCodeExists(kodePendaftaran);
-  if (isCodeExists) {
-    // Jika kode pendaftaran sudah ada, generate kode pendaftaran baru
-    return generateKodePendaftaran();
+  // Memeriksa apakah kode pendaftaran sudah terdaftar di API
+  const isTerdaftar = await isKodePendaftaranTerdaftar(kodePendaftaran);
+  if (isTerdaftar) {
+    // Jika kode pendaftaran sudah terdaftar, menghasilkan kode baru dengan increment angka acak
+    var increment = parseInt(randomNum.substr(-2)) + 1;
+    randomNum = randomNum.substr(0, randomNum.length - 2) + increment.toString().padStart(2, "0");
+    kodePendaftaran = randomNum;
   }
 
   return kodePendaftaran;
 }
 
-// Fungsi untuk memeriksa keberadaan kode pendaftaran pada API
-async function checkCodeExists(kodePendaftaran) {
-  try {
-    var response = await fetch("https://ws-dito.herokuapp.com/pendaftaran/" + kodePendaftaran);
-    var data = await response.json();
-    return data.exists;
-  } catch (error) {
-    console.error("Error checking code existence:", error);
-    return false;
-  }
-}
-
 // Mendapatkan elemen input kode pendaftaran
 var kdpendaftaranInput = document.getElementById("kdpendaftaran");
 
-// Cek apakah kode pendaftaran sudah ada di localStorage
-var storedKodePendaftaran = localStorage.getItem("kdpendaftaran");
-if (storedKodePendaftaran) {
-  // Mendapatkan tanggal sekarang
-  var currentDate = new Date();
-  // Mendapatkan dua digit tahun terakhir
-  var year = currentDate.getFullYear().toString().substr(-2);
-  // Mendapatkan dua digit bulan
-  var month = (currentDate.getMonth() + 1).toString().padStart(2, "0");
-  // Mendapatkan dua digit tanggal
-  var day = currentDate.getDate().toString().padStart(2, "0");
-
-  var lastGeneratedDate = storedKodePendaftaran.substr(0, 6);
-  if (parseInt(lastGeneratedDate) === parseInt(day + month + year)) {
-    // Jika kode pendaftaran terakhir telah dihasilkan hari ini, lanjutkan urutan
-    var lastSequence = parseInt(storedKodePendaftaran.substr(-2));
-    lastSequence += 1;
-
-    // Menggabungkan semua bagian untuk membentuk kode pendaftaran baru
-    var newKodePendaftaran = day + month + year + lastSequence.toString().padStart(2, "0");
-
-    // Cek keberadaan kode pendaftaran baru pada API
-    var isCodeExists = await checkCodeExists(newKodePendaftaran);
-    if (isCodeExists) {
-      // Jika kode pendaftaran baru sudah ada, generate kode pendaftaran baru lagi
-      newKodePendaftaran = await generateKodePendaftaran();
-    }
-
-    kdpendaftaranInput.value = newKodePendaftaran;
-    // Simpan kode pendaftaran baru ke localStorage
-    localStorage.setItem("kdpendaftaran", newKodePendaftaran);
-  } else {
-    // Jika kode pendaftaran terakhir tidak dihasilkan hari ini, generate kode pendaftaran baru
-    var generatedKodePendaftaran = await generateKodePendaftaran();
-    kdpendaftaranInput.value = generatedKodePendaftaran;
-    // Simpan kode pendaftaran ke localStorage
-    localStorage.setItem("kdpendaftaran", generatedKodePendaftaran);
-  }
-} else {
-  // Jika belum ada, generate kode pendaftaran baru
-  var generatedKodePendaftaran = await generateKodePendaftaran();
-  kdpendaftaranInput.value = generatedKodePendaftaran;
-  // Simpan kode pendaftaran ke localStorage
-  localStorage.setItem("kdpendaftaran", generatedKodePendaftaran);
-}
+// Mengisi nilai input kode pendaftaran dengan kode yang dihasilkan
+generateKodePendaftaran()
+  .then((kodePendaftaran) => {
+    kdpendaftaranInput.value = kodePendaftaran;
+    // Simpan angka acak berurutan ke localStorage
+    localStorage.setItem("randomNum", kodePendaftaran);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
