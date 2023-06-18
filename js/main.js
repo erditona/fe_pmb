@@ -133,3 +133,9 @@ function validateKTPNumber() {
     }
   };
 }
+
+//Button Batal Pendaftaran
+function redirectToTablePendaftaran() {
+  window.location.href = "../admin/table-pendaftaran.html"; // Redirect to the target page
+  window.location.reload(true); // Perform a hard refresh of the page
+}
