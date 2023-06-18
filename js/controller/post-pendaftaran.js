@@ -27,6 +27,10 @@ function pushData() {
     return;
   }
 
+  // Get the selected options' text
+  let asalSekolahText = document.getElementById("asalsekolah").options[document.getElementById("asalsekolah").selectedIndex].text;
+  let jurusanText = document.getElementById("jurusan").options[document.getElementById("jurusan").selectedIndex].text;
+
   // Clear the status message if all fields are valid
   document.getElementById("status").textContent = "";
 
@@ -40,11 +44,11 @@ function pushData() {
     },
     asalsekolah: {
       _id: asalSekolahValue,
-      nama: "",
+      nama: asalSekolahText,
     },
     jurusan: {
       _id: jurusanValue,
-      nama: "",
+      nama: jurusanText,
     },
     jalur: jalurValue,
     alulbi: alasanULBIValue,
