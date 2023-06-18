@@ -67,7 +67,7 @@ import { urlPOST, AmbilResponse } from "../config/url-post-pendaftaran.js";
 
 async function getSchoolData(schoolId) {
   // Fetch school data based on the ID (replace with your API endpoint)
-  const response = await fetch(`https://ws-dito.herokuapp.com/sekolah/${value.asalsekolah._id}`);
+  const response = await fetch(`https://ws-dito.herokuapp.com/sekolah/${schoolId}`);
   if (response.ok) {
     return response.json();
   } else {
@@ -77,7 +77,7 @@ async function getSchoolData(schoolId) {
 
 async function getMajorData(majorId) {
   // Fetch major data based on the ID (replace with your API endpoint)
-  const response = await fetch(`https://ws-dito.herokuapp.com/jurusan/${value.jurusan._id}`);
+  const response = await fetch(`https://ws-dito.herokuapp.com/jurusan/${majorId}`);
   if (response.ok) {
     return response.json();
   } else {
