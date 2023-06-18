@@ -48,10 +48,10 @@ function pushData() {
     return;
   }
 
-  // Additional validation for phone number
-  if (!/^0\d{9,12}$/.test(phoneValue)) {
-    document.getElementById("status").innerHTML = "Format Nomor Telepon Salah! Harap masukkan nomor telepon yang diawali dengan '0' dan terdiri dari 10-13 angka.";
-    return; // Stop further execution if phone number is not valid
+  if (!/^\d{10,13}$/.test(phoneValue)) {
+    // Jika Nomor Telepon tidak valid, tampilkan pesan error
+    document.getElementById("status").textContent = "Nomor Telepon harus terdiri dari 10 hingga 13 digit angka.";
+    return;
   }
 
   // Clear the status message if all fields are valid
