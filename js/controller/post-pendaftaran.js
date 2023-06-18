@@ -10,7 +10,7 @@ function pushData() {
   let phoneValue = getValue("phone_number");
   let alamatValue = getValue("alamat");
   let asalSekolahValue = parseInt(getValue("asalsekolah"));
-  let jurusanValue = getValue("jurusan");
+  let jurusanValue = parseInt(getValue("jurusan"));
   let jalurValue = getValue("jalur");
   let alasanULBIValue = getValue("alulbi");
   let alasanJurusanValue = getValue("aljurusan");
