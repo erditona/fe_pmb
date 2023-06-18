@@ -9,17 +9,14 @@ function pushData() {
   let namaValue = getValue("nama");
   let phoneValue = getValue("phone_number");
   let alamatValue = getValue("alamat");
-  let asalSekolahValue = {
-    _id: parseInt(getValue("asalsekolah")),
-    nama: "",
-  };
-  let jurusanValue = parseInt(getValue("jurusan"));
+  let asalSekolahValue = getValue("asalsekolah");
+  let jurusanValue = getValue("jurusan");
   let jalurValue = getValue("jalur");
   let alasanULBIValue = getValue("alulbi");
   let alasanJurusanValue = getValue("aljurusan");
 
   // Perform form validation
-  if (ktpValue === "" || namaValue === "" || phoneValue === "" || alamatValue === "" || asalSekolahValue._id === "" || jurusanValue === "" || jalurValue === "" || alasanULBIValue === "" || alasanJurusanValue === "") {
+  if (ktpValue === "" || namaValue === "" || phoneValue === "" || alamatValue === "" || asalSekolahValue === "" || jurusanValue === "" || jalurValue === "" || alasanULBIValue === "" || alasanJurusanValue === "") {
     document.getElementById("status").textContent = "Data tidak boleh kosong!";
     return;
   }
@@ -41,8 +38,14 @@ function pushData() {
       phone_number: phoneValue,
       alamat: alamatValue,
     },
-    asalsekolah: asalSekolahValue,
-    jurusan: jurusanValue,
+    asalsekolah: {
+      _id: asalSekolahValue,
+      nama: "",
+    },
+    jurusan: {
+      _id: jurusanValue,
+      nama: "",
+    },
     jalur: jalurValue,
     alulbi: alasanULBIValue,
     aljurusan: alasanJurusanValue,
