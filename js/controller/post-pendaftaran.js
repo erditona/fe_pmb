@@ -48,9 +48,9 @@ function pushData() {
     return;
   }
 
-  if (!/^\d{10,13}$/.test(phoneValue)) {
+  if (!/^0\d{9,12}$/.test(phoneValue)) {
     // Jika Nomor Telepon tidak valid, tampilkan pesan error
-    document.getElementById("status").textContent = "Nomor Telepon harus terdiri dari 10 hingga 13 digit angka.";
+    document.getElementById("status").textContent = "Nomor Telepon harus berawalan 0 dan terdiri dari 10 hingga 13 digit angka.";
     return;
   }
 

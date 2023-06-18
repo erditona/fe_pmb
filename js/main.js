@@ -99,20 +99,20 @@ function validatePhoneNumber(phoneNumber) {
   }
 }
 
-//Awal GeneratePendaftaran
-// Generate kode pendaftaran secara otomatis
-function generateKodePendaftaran() {
-  var prefix = "202301";
-  var timestamp = Date.now();
-  var kodePendaftaran = prefix + timestamp;
+// //Awal GeneratePendaftaran
+// // Generate kode pendaftaran secara otomatis
+// function generateKodePendaftaran() {
+//   var prefix = "202301";
+//   var timestamp = Date.now();
+//   var kodePendaftaran = prefix + timestamp;
 
-  return kodePendaftaran;
-}
+//   return kodePendaftaran;
+// }
 
-// Set nilai kode pendaftaran pada input field
-var kodePendaftaranInput = document.getElementById("kode-pendaftaran");
-kodePendaftaranInput.value = generateKodePendaftaran();
-//Akhir GeneratePendaftaran
+// // Set nilai kode pendaftaran pada input field
+// var kodePendaftaranInput = document.getElementById("kode-pendaftaran");
+// kodePendaftaranInput.value = generateKodePendaftaran();
+// //Akhir GeneratePendaftaran
 
 //validasi input nomer ktp
 function validateKTPNumber() {
