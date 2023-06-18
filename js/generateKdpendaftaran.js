@@ -29,7 +29,6 @@
 // // Simpan angka acak berurutan ke localStorage
 // localStorage.setItem("randomNum", kdpendaftaranInput.value);
 
-// Fungsi untuk memeriksa apakah kode pendaftaran sudah terdaftar di API
 async function isKodePendaftaranTerdaftar(kodePendaftaran) {
   try {
     const response = await fetch(`https://ws-dito.herokuapp.com/pendaftaran/${kodePendaftaran}`);
@@ -71,6 +70,9 @@ async function generateKodePendaftaran() {
     kodePendaftaran = randomNum;
   }
 
+  // Simpan angka acak berurutan ke localStorage
+  localStorage.setItem("randomNum", kodePendaftaran);
+
   return kodePendaftaran;
 }
 
@@ -81,8 +83,6 @@ var kdpendaftaranInput = document.getElementById("kdpendaftaran");
 generateKodePendaftaran()
   .then((kodePendaftaran) => {
     kdpendaftaranInput.value = kodePendaftaran;
-    // Simpan angka acak berurutan ke localStorage
-    localStorage.setItem("randomNum", kodePendaftaran);
   })
   .catch((error) => {
     console.error(error);
