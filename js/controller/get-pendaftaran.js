@@ -46,12 +46,12 @@ export function isiTablePendaftaran(results) {
 async function isiRow(value) {
   document.getElementById("jmlpendaftar").innerHTML = "" + MyvarPendaftaran.length + " Data";
 
-  // Mendapatkan data sekolah berdasarkan ID
-  const sekolahResponse = await fetch(`https://ws-dito.herokuapp.com/sekolah/${value.asalsekolah}`);
+  // Fetch sekolah berdasarkan ID
+  const sekolahResponse = await fetch(`https://ws-dito.herokuapp.com/sekolah/${value.asalsekolah._id}`);
   const sekolahData = await sekolahResponse.json();
 
-  // Mendapatkan data jurusan berdasarkan ID
-  const jurusanResponse = await fetch(`https://ws-dito.herokuapp.com/jurusan/${value.jurusan}`);
+  // Fetch jurusan berdasarkan ID
+  const jurusanResponse = await fetch(`https://ws-dito.herokuapp.com/jurusan/${value.jurusan._id}`);
   const jurusanData = await jurusanResponse.json();
 
   let content = isiTable
