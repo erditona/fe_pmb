@@ -6,7 +6,7 @@ import { isiTable } from "../temp/table.js";
 var MyvarPendaftaran = {};
 
 export function isiTablePendaftaran(results) {
-  results.sort((a, b) => new Date(a.created_at) - new Date(b.created_at)); // Sort the array based on created_at in ascending order
+  results.reverse();
   MyvarPendaftaran.length = results.length;
   results.forEach(isiRow);
   console.log(results);
