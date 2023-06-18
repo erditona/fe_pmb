@@ -1,66 +1,3 @@
-// import { postData } from "https://bukulapak.github.io/api/process.js";
-// import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
-// import { urlPOST, AmbilResponse } from "../config/url-post-pendaftaran.js";
-
-// function pushData() {
-//   // Get the form values
-//   let kdpendaftaranValue = parseInt(getValue("kdpendaftaran"));
-//   let ktpValue = parseInt(getValue("ktp"));
-//   let namaValue = getValue("nama");
-//   let phoneValue = getValue("phone_number");
-//   let alamatValue = getValue("alamat");
-//   let asalSekolahValue = getValue("asalsekolah");
-//   let jurusanValue = getValue("jurusan");
-//   let jalurValue = getValue("jalur");
-//   let alasanULBIValue = getValue("alulbi");
-//   let alasanJurusanValue = getValue("aljurusan");
-
-//   // Perform form validation
-//   if (ktpValue === "" || namaValue === "" || phoneValue === "" || alamatValue === "" || asalSekolahValue === "" || jurusanValue === "" || jalurValue === "" || alasanULBIValue === "" || alasanJurusanValue === "") {
-//     document.getElementById("status").textContent = "Data tidak boleh kosong!";
-//     return;
-//   }
-
-//   // Validate KTP Number
-//   if (!/^\d{16}$/.test(ktpValue)) {
-//     document.getElementById("status").textContent = "Nomor KTP harus terdiri dari 16 digit angka.";
-//     return;
-//   }
-
-//   // Get the selected options' text
-//   let asalSekolahText = document.getElementById("asalsekolah").options[document.getElementById("asalsekolah").selectedIndex].text;
-//   let jurusanText = document.getElementById("jurusan").options[document.getElementById("jurusan").selectedIndex].text;
-
-//   // Clear the status message if all fields are valid
-//   document.getElementById("status").textContent = "";
-
-//   let data = {
-//     kdpendaftar: kdpendaftaranValue,
-//     biodata: {
-//       ktp: ktpValue,
-//       nama: namaValue,
-//       phone_number: phoneValue,
-//       alamat: alamatValue,
-//     },
-//     asalsekolah: {
-//       _id: asalSekolahValue,
-//       nama: asalSekolahText,
-//     },
-//     jurusan: {
-//       _id: jurusanValue,
-//       nama: jurusanText,
-//     },
-//     jalur: jalurValue,
-//     alulbi: alasanULBIValue,
-//     aljurusan: alasanJurusanValue,
-//   };
-
-//   console.log(data);
-//   postData(urlPOST, data, AmbilResponse);
-// }
-
-// onClick("button", pushData);
-
 import { postData } from "https://bukulapak.github.io/api/process.js";
 import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
 import { urlPOST, AmbilResponse } from "../config/url-post-pendaftaran.js";
@@ -99,13 +36,25 @@ function pushData() {
   let alasanJurusanValue = getValue("aljurusan");
 
   // Perform form validation
-  // ...
+  if (ktpValue === "" || namaValue === "" || phoneValue === "" || alamatValue === "" || asalSekolahValue === "" || jurusanValue === "" || jalurValue === "" || alasanULBIValue === "" || alasanJurusanValue === "") {
+    // Jika ada field yang kosong, tampilkan pesan error
+    document.getElementById("status").textContent = "Data tidak boleh kosong!";
+    return;
+  }
+
+  if (!/^\d{16}$/.test(ktpValue)) {
+    // Jika Nomor KTP tidak valid, tampilkan pesan error
+    document.getElementById("status").textContent = "Nomor KTP harus terdiri dari 16 digit angka.";
+    return;
+  }
 
   // Clear the status message if all fields are valid
   document.getElementById("status").textContent = "";
 
+  // Ambil data sekolah dan data jurusan secara bersamaan
   Promise.all([getSchoolData(asalSekolahValue), getMajorData(jurusanValue)])
     .then(([schoolData, majorData]) => {
+      // Ekstrak nilai-nilai yang diperlukan dari data yang diambil
       let asalSekolahText = schoolData.nama;
       let phoneSekolahValue = schoolData.phone_number;
       let alamatSekolahValue = schoolData.alamat;
@@ -114,6 +63,7 @@ function pushData() {
       let kdjurusanValue = majorData.kdjurusan;
       let jenjangValue = majorData.jenjang;
 
+      // Bangun objek data
       let data = {
         kdpendaftar: kdpendaftaranValue,
         biodata: {
