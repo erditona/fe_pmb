@@ -99,6 +99,7 @@ function validatePhoneNumber(phoneNumber) {
   }
 }
 
+//Awal GeneratePendaftaran
 // Generate kode pendaftaran secara otomatis
 function generateKodePendaftaran() {
   var prefix = "202301";
@@ -111,6 +112,7 @@ function generateKodePendaftaran() {
 // Set nilai kode pendaftaran pada input field
 var kodePendaftaranInput = document.getElementById("kode-pendaftaran");
 kodePendaftaranInput.value = generateKodePendaftaran();
+//Akhir GeneratePendaftaran
 
 //validasi input nomer ktp
 function validateKTPNumber() {
