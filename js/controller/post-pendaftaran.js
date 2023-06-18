@@ -38,12 +38,8 @@ function pushData() {
       phone_number: phoneValue,
       alamat: alamatValue,
     },
-    asalsekolah: {
-      nama: asalSekolahValue,
-    },
-    jurusan: {
-      nama: jurusanValue,
-    },
+    asalsekolah: asalSekolahValue,
+    jurusan: jurusanValue,
     jalur: jalurValue,
     alulbi: alasanULBIValue,
     aljurusan: alasanJurusanValue,
