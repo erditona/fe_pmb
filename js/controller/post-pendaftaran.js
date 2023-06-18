@@ -4,6 +4,7 @@ import { urlPOST, AmbilResponse } from "../config/url-post-pendaftaran.js";
 
 function pushData() {
   // Get the form values
+  let kdpendaftaranValue = getValue("kdpendaftaran");
   let ktpValue = getValue("ktp");
   let namaValue = getValue("nama");
   let phoneValue = getValue("phone_number");
@@ -30,12 +31,19 @@ function pushData() {
   document.getElementById("status").textContent = "";
 
   let data = {
-    ktp: ktpValue,
-    nama: namaValue,
-    phone_number: phoneValue,
-    alamat: alamatValue,
-    asalsekolah: asalSekolahValue,
-    jurusan: jurusanValue,
+    kdpendaftar: kdpendaftaranValue,
+    biodata: {
+      ktp: ktpValue,
+      nama: namaValue,
+      phone_number: phoneValue,
+      alamat: alamatValue,
+    },
+    asalsekolah: {
+      nama: asalSekolahValue,
+    },
+    jurusan: {
+      nama: jurusanValue,
+    },
     jalur: jalurValue,
     alulbi: alasanULBIValue,
     aljurusan: alasanJurusanValue,
