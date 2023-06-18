@@ -4,7 +4,7 @@ import { urlPOST, AmbilResponse } from "../config/url-post-pendaftaran.js";
 
 function pushData() {
   // Get the form values
-  let kdpendaftaranValue = getValue("kdpendaftaran");
+  let kdpendaftaranValue = parseInt(getValue("kdpendaftaran"));
   let ktpValue = getValue("ktp");
   let namaValue = getValue("nama");
   let phoneValue = getValue("phone_number");
