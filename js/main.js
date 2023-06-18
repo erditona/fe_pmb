@@ -42,6 +42,12 @@ document.addEventListener("DOMContentLoaded", function () {
 //capitalizeEachWord
 
 function capitalizeEachWord(value) {
+  // Validate that the input contains only letters
+  if (!/^[a-zA-Z\s]+$/.test(value)) {
+    document.getElementById("status").textContent = "Masukan Nama Hanya Berupa Huruf";
+    return ""; // Return an empty string to indicate invalid input
+  }
+
   // Split the input value into an array of words
   let words = value.split(" ");
 
@@ -105,3 +111,21 @@ function generateKodePendaftaran() {
 // Set nilai kode pendaftaran pada input field
 var kodePendaftaranInput = document.getElementById("kode-pendaftaran");
 kodePendaftaranInput.value = generateKodePendaftaran();
+
+//validasi input nomer ktp
+function validateKTPNumber() {
+  const ktpInput = document.getElementById("ktp");
+  const statusElement = document.getElementById("status");
+
+  ktpInput.oninput = function () {
+    const value = this.value;
+    const isInteger = Number.isInteger(Number(value));
+    const isValidLength = value.length === 16;
+
+    if (isInteger && isValidLength) {
+      statusElement.textContent = ""; // Clear the error message
+    } else {
+      statusElement.textContent = "Nomor KTP harus berupa bilangan bulat dengan 16 digit.";
+    }
+  };
+}
