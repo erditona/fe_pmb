@@ -2,10 +2,6 @@ import { postData } from "https://bukulapak.github.io/api/process.js";
 import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
 import { urlPOST, AmbilResponse } from "../config/url-post-pendaftaran.js";
 
-import { postData } from "https://bukulapak.github.io/api/process.js";
-import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
-import { urlPOST, AmbilResponse } from "../config/url-post-pendaftaran.js";
-
 function pushData() {
   // Get the form values
   let kdpendaftaranValue = parseInt(getValue("kdpendaftaran"));
