@@ -119,13 +119,15 @@ function validateKTPNumber() {
 
   ktpInput.oninput = function () {
     const value = this.value;
-    const isInteger = Number.isInteger(Number(value));
+    const isInteger = /^\d+$/.test(value);
     const isValidLength = value.length === 16;
 
     if (isInteger && isValidLength) {
       statusElement.textContent = ""; // Clear the error message
     } else {
-      statusElement.textContent = "Nomor KTP harus berupa bilangan bulat dengan 16 digit.";
+      statusElement.textContent = "Nomor KTP harus terdiri dari 16 digit.";
+      // Trim the input value to 16 characters if it exceeds the limit
+      this.value = value.slice(0, 16);
     }
   };
 }
