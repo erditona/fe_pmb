@@ -2,7 +2,6 @@ import { postData } from "https://bukulapak.github.io/api/process.js";
 import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
 import { urlPOST, AmbilResponse } from "../config/url-post-pendaftaran.js";
 
-// Fetch data for jurusan and sekolah
 function fetchData() {
   fetch("https://ws-dito.herokuapp.com/sekolah")
     .then((response) => response.json())
@@ -10,20 +9,18 @@ function fetchData() {
       const jurusanDropdown = document.getElementById("jurusan");
       const sekolahDropdown = document.getElementById("asalsekolah");
 
-      // Populate jurusan dropdown
-      data.jurusan.forEach((item) => {
-        const option = document.createElement("option");
-        option.value = item.id;
-        option.text = item.nama;
-        jurusanDropdown.appendChild(option);
-      });
-
-      // Populate sekolah dropdown
-      data.sekolah.forEach((item) => {
-        const option = document.createElement("option");
-        option.value = item.id;
-        option.text = item.nama;
-        sekolahDropdown.appendChild(option);
+      data.forEach((item) => {
+        if (item.jenis === "jurusan") {
+          const option = document.createElement("option");
+          option.value = item._id;
+          option.text = item.nama;
+          jurusanDropdown.appendChild(option);
+        } else if (item.jenis === "sekolah") {
+          const option = document.createElement("option");
+          option.value = item._id;
+          option.text = item.nama;
+          sekolahDropdown.appendChild(option);
+        }
       });
     })
     .catch((error) => console.log(error));
@@ -32,46 +29,51 @@ function fetchData() {
 fetchData();
 
 function pushData() {
-  // Get the form values
-  let kdpendaftaranValue = parseInt(getValue("kdpendaftaran"));
-  let ktpValue = parseInt(getValue("ktp"));
-  let namaValue = getValue("nama");
-  let phoneValue = getValue("phone_number");
-  let alamatValue = getValue("alamat");
-  let asalSekolahValue = parseInt(getValue("asalsekolah"));
-  let jurusanValue = parseInt(getValue("jurusan"));
-  let jalurValue = getValue("jalur");
-  let alasanULBIValue = getValue("alulbi");
-  let alasanJurusanValue = getValue("aljurusan");
+  const kdpendaftaranValue = parseInt(getValue("kdpendaftaran"));
+  const ktpValue = parseInt(getValue("ktp"));
+  const namaValue = getValue("nama");
+  const phoneValue = getValue("phone_number");
+  const alamatValue = getValue("alamat");
+  const asalSekolahValue = getValue("asalsekolah");
+  const jurusanValue = getValue("jurusan");
+  const jalurValue = getValue("jalur");
+  const alasanULBIValue = getValue("alulbi");
+  const alasanJurusanValue = getValue("aljurusan");
 
-  // Perform form validation
-  if (ktpValue === "" || namaValue === "" || phoneValue === "" || alamatValue === "" || asalSekolahValue === "" || jurusanValue === "" || jalurValue === "" || alasanULBIValue === "" || alasanJurusanValue === "") {
+  if (
+    isNaN(kdpendaftaranValue) ||
+    isNaN(ktpValue) ||
+    namaValue === "" ||
+    phoneValue === "" ||
+    alamatValue === "" ||
+    asalSekolahValue === "" ||
+    jurusanValue === "" ||
+    jalurValue === "" ||
+    alasanULBIValue === "" ||
+    alasanJurusanValue === ""
+  ) {
     document.getElementById("status").textContent = "Data tidak boleh kosong!";
     return;
   }
 
-  // Validate KTP Number
   if (!/^\d{16}$/.test(ktpValue)) {
     document.getElementById("status").textContent = "Nomor KTP harus terdiri dari 16 digit angka.";
     return;
   }
 
-  // Clear the status message if all fields are valid
   document.getElementById("status").textContent = "";
 
-  let data = {
-    kdpendaftar: kdpendaftaranValue,
-    biodata: {
-      ktp: ktpValue,
-      nama: namaValue,
-      phone_number: phoneValue,
-      alamat: alamatValue,
-    },
-    asalsekolah: asalSekolahValue,
+  const data = {
+    kdpendaftaran: kdpendaftaranValue,
+    ktp: ktpValue,
+    nama: namaValue,
+    phone_number: phoneValue,
+    alamat: alamatValue,
+    asalSekolah: asalSekolahValue,
     jurusan: jurusanValue,
     jalur: jalurValue,
-    alulbi: alasanULBIValue,
-    aljurusan: alasanJurusanValue,
+    alasanULBI: alasanULBIValue,
+    alasanJurusan: alasanJurusanValue,
   };
 
   console.log(data);
