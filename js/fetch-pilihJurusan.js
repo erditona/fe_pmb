@@ -7,8 +7,8 @@ fetch("https://ws-dito.herokuapp.com/jurusan")
     // Generate options for each data item
     data.forEach((item) => {
       const option = document.createElement("option");
-      option.value = item;
-      option.text = item;
+      option.value = item.kdjurusan;
+      option.text = item.nama;
       jurusanDropdown.appendChild(option);
     });
   })
