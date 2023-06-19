@@ -42,38 +42,38 @@
 //   addInner("iniTabel", content);
 // }
 
-import { addInner } from "https://bukulapak.github.io/element/process.js";
-import { getRandomColor, getRandomColorName } from "https://bukulapak.github.io/image/process.js";
-import { isiTable } from "../temp/table.js";
+// import { addInner } from "https://bukulapak.github.io/element/process.js";
+// import { getRandomColor, getRandomColorName } from "https://bukulapak.github.io/image/process.js";
+// import { isiTable } from "../temp/table.js";
 
-// Pendaftaran
-var MyvarPendaftaran = {};
-export function isiTablePendaftaran(results) {
-  results.reverse();
-  MyvarPendaftaran.length = results.length;
-  results.forEach(isiRow);
-  console.log(results);
-}
+// // Pendaftaran
+// var MyvarPendaftaran = {};
+// export function isiTablePendaftaran(results) {
+//   results.reverse();
+//   MyvarPendaftaran.length = results.length;
+//   results.forEach(isiRow);
+//   console.log(results);
+// }
 
-function isiRow(value) {
-  document.getElementById("jmlpendaftar").innerHTML = "" + MyvarPendaftaran.length + " Data";
-  let content = isiTable
-    .replace("#KDPENDAFTAR#", value.kdpendaftar)
-    .replace("#NAMA#", value.biodata.nama)
-    .replace("#NOHP#", value.biodata.phone_number)
-    .replace("#SEKOLAH#", value.sekolah.nama)
-    .replace("#NOHPSEKOLAH#", value.sekolah.phone_number)
-    .replace("#JURUSAN#", value.jurusan.nama)
-    .replace("#JENJANG#", value.jurusan.jenjang)
-    .replace("#JALUR#", value.jalur)
-    .replace("#ALULBI#", value.alulbi)
-    .replace("#ALJURUSAN#", value.aljurusan)
-    .replace("#IDEDIT#", value._id)
-    .replace("#IDHAPUS#", value._id)
-    .replace("#WARNA#", getRandomColor())
-    .replace(/#WARNALOGO#/g, getRandomColorName());
-  addInner("iniTabel", content);
-}
+// function isiRow(value) {
+//   document.getElementById("jmlpendaftar").innerHTML = "" + MyvarPendaftaran.length + " Data";
+//   let content = isiTable
+//     .replace("#KDPENDAFTAR#", value.kdpendaftar)
+//     .replace("#NAMA#", value.biodata.nama)
+//     .replace("#NOHP#", value.biodata.phone_number)
+//     .replace("#SEKOLAH#", value.sekolah.nama)
+//     .replace("#NOHPSEKOLAH#", value.sekolah.phone_number)
+//     .replace("#JURUSAN#", value.jurusan.nama)
+//     .replace("#JENJANG#", value.jurusan.jenjang)
+//     .replace("#JALUR#", value.jalur)
+//     .replace("#ALULBI#", value.alulbi)
+//     .replace("#ALJURUSAN#", value.aljurusan)
+//     .replace("#IDEDIT#", value._id)
+//     .replace("#IDHAPUS#", value._id)
+//     .replace("#WARNA#", getRandomColor())
+//     .replace(/#WARNALOGO#/g, getRandomColorName());
+//   addInner("iniTabel", content);
+// }
 
 // import { addInner } from "https://bukulapak.github.io/element/process.js";
 // import { getRandomColor, getRandomColorName } from "https://bukulapak.github.io/image/process.js";
@@ -131,3 +131,61 @@ function isiRow(value) {
 
 //   addInner("iniTabel", content);
 // }
+
+import { addInner } from "https://bukulapak.github.io/element/process.js";
+import { getRandomColor, getRandomColorName } from "https://bukulapak.github.io/image/process.js";
+import { isiTable } from "../temp/table.js";
+
+// Pendaftaran
+var MyvarPendaftaran = {};
+
+export function isiTablePendaftaran(results) {
+  MyvarPendaftaran.length = results.length;
+  results.forEach(async (value) => {
+    await fetchSchoolAndMajorData(value.sekolah_id, value.jurusan_id)
+      .then((data) => {
+        value.sekolah = data.sekolah;
+        value.jurusan = data.jurusan;
+        isiRow(value);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  });
+  console.log(results);
+}
+
+async function fetchSchoolAndMajorData(sekolahId, jurusanId) {
+  const url = `https://ws-dito.herokuapp.com/sekolah/${sekolahId}`;
+  const response = await fetch(url);
+  const schoolData = await response.json();
+
+  const majorUrl = `https://ws-dito.herokuapp.com/jurusan/${jurusanId}`;
+  const majorResponse = await fetch(majorUrl);
+  const majorData = await majorResponse.json();
+
+  return {
+    sekolah: schoolData,
+    jurusan: majorData,
+  };
+}
+
+function isiRow(value) {
+  document.getElementById("jmlpendaftar").innerHTML = `${MyvarPendaftaran.length} Data`;
+  let content = isiTable
+    .replace("#KDPENDAFTAR#", value.kdpendaftar)
+    .replace("#NAMA#", value.biodata.nama)
+    .replace("#NOHP#", value.biodata.phone_number)
+    .replace("#SEKOLAH#", value.sekolah.nama)
+    .replace("#NOHPSEKOLAH#", value.sekolah.phone_number)
+    .replace("#JURUSAN#", value.jurusan.nama)
+    .replace("#JENJANG#", value.jurusan.jenjang)
+    .replace("#JALUR#", value.jalur)
+    .replace("#ALULBI#", value.alulbi)
+    .replace("#ALJURUSAN#", value.aljurusan)
+    .replace("#IDEDIT#", value._id)
+    .replace("#IDHAPUS#", value._id)
+    .replace("#WARNA#", getRandomColor())
+    .replace(/#WARNALOGO#/g, getRandomColorName());
+  addInner("iniTabel", content);
+}
