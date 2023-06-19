@@ -153,8 +153,11 @@ export let isiTable3 = `
       </div>
     </th>
     <th class="whitespace-nowrap pr-4 bg-white text-sm font-medium text-coolGray-800">
-        <a type="button" href="edit-sekolah.html?sekolahId=#IDEDIT#" class="btn-edit bg-blue-500 hover:bg-blue-700 text-white text-center font-bold py-1 px-2 rounded w-full inline-block">Edit</a>
-        <button type="button" id="del_button" onclick="deleteData('#IDHAPUS#')" class="btn-delete bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded w-full inline-block">Delete</button>
+    <a type="button" href="edit-sekolah.html?sekolahId=#IDEDIT#"> Edit
+    </a>
+    |
+    <button type="button" id="del_button" onclick="deleteData('#IDHAPUS#')"> Delete
+    </button>
     </th>
   </tr>
 `;
