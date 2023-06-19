@@ -224,6 +224,8 @@ document.getElementById("form-pendaftaran").addEventListener("submit", function 
         generateKodePendaftaran()
           .then((newKodePendaftaran) => {
             kdpendaftaranInput.value = newKodePendaftaran;
+            // Simpan angka acak berurutan ke localStorage
+            localStorage.setItem("randomNum", newKodePendaftaran);
           })
           .catch((error) => {
             console.error(error);
