@@ -12,28 +12,19 @@ export function isiData(results) {
     { id: "aljurusan", path: "aljurusan" },
   ];
 
-  inputMapping.forEach(({ id, path }) => {
+  inputMapping.forEach(({ id, path, index, property }) => {
     const inputElement = document.getElementById(id);
-    const value = getNestedValue(results, path);
-    if (inputElement) {
-      inputElement.value = value;
-    } else {
-      console.log(`Input element with id "${id}" not found.`);
-    }
+    const value = getNestedValue(results, path, index, property);
+    inputElement.value = value;
   });
 }
 
-function getNestedValue(obj, path) {
-  const nestedKeys = path.split(".");
-  let value = obj;
+function getNestedValue(obj, path, index, property) {
+  const value = path.split(".").reduce((value, key) => (value && value[key] ? value[key] : ""), obj);
+  // console.log(`Value at path ${path}:`, value);
 
-  for (let key of nestedKeys) {
-    if (value && value.hasOwnProperty(key)) {
-      value = value[key];
-    } else {
-      value = "";
-      break;
-    }
+  if (Array.isArray(value) && value.length > index && value[index].hasOwnProperty(property)) {
+    return value[index][property];
   }
 
   return value;
