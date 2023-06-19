@@ -63,6 +63,28 @@ function capitalizeEachWord(value) {
   return words.join(" ");
 }
 
+function capitalizeEachWord2(value) {
+  // Validate that the input contains only letters and numbers
+  if (!/^[a-zA-Z0-9\s]+$/.test(value)) {
+    document.getElementById("status").textContent = "Masukkan hanya huruf dan angka";
+    return ""; // Return an empty string to indicate invalid input
+  }
+
+  // Split the input value into an array of words
+  let words = value.split(" ");
+
+  // Capitalize the first letter of each word
+  for (let i = 0; i < words.length; i++) {
+    let word = words[i];
+    if (word.length > 0) {
+      words[i] = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    }
+  }
+
+  // Join the capitalized words back into a string
+  return words.join(" ");
+}
+
 //validasiInputKodeSekolah
 function validateInput2(input) {
   // Remove non-digit characters
@@ -98,21 +120,6 @@ function validatePhoneNumber(phoneNumber) {
     document.getElementById("status").textContent = "";
   }
 }
-
-// //Awal GeneratePendaftaran
-// // Generate kode pendaftaran secara otomatis
-// function generateKodePendaftaran() {
-//   var prefix = "202301";
-//   var timestamp = Date.now();
-//   var kodePendaftaran = prefix + timestamp;
-
-//   return kodePendaftaran;
-// }
-
-// // Set nilai kode pendaftaran pada input field
-// var kodePendaftaranInput = document.getElementById("kode-pendaftaran");
-// kodePendaftaranInput.value = generateKodePendaftaran();
-// //Akhir GeneratePendaftaran
 
 //validasi input nomer ktp
 function validateKTPNumber() {
