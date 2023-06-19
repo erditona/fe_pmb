@@ -24,12 +24,17 @@ export function isiData(results) {
   });
 }
 
-function getNestedValue(obj, path, index, property) {
-  const value = path.split(".").reduce((value, key) => (value && value[key] ? value[key] : ""), obj);
-  // console.log(`Value at path ${path}:`, value);
+function getNestedValue(obj, path) {
+  const nestedKeys = path.split(".");
+  let value = obj;
 
-  if (Array.isArray(value) && value.length > index && value[index].hasOwnProperty(property)) {
-    return value[index][property];
+  for (let key of nestedKeys) {
+    if (value && value.hasOwnProperty(key)) {
+      value = value[key];
+    } else {
+      value = "";
+      break;
+    }
   }
 
   return value;
