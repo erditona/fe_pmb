@@ -1,4 +1,7 @@
-export let urlPOST = "https://ws-dito.herokuapp.com/ins-sekolah";
+const urlParams = new URLSearchParams(window.location.search);
+const sekolahId = urlParams.get("sekolahId");
+
+export let urlPUT = "https://ws-dito.herokuapp.com/upd-sekolah/" + sekolahId;
 
 export function AmbilResponse(result) {
   console.log(result); // Display API response in the console
@@ -11,7 +14,7 @@ export function AmbilResponse(result) {
     confirmButtonText: "OK",
   }).then((result) => {
     if (result.isConfirmed) {
-      window.location.reload(); // Reload the page after clicking OK
+      window.location.href = "table-sekolah.html"; // Reload the page after clicking OK
     }
   });
 }
