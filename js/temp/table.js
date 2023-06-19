@@ -153,9 +153,6 @@ export let isiTable3 = `
       </div>
     </th>
     <th class="whitespace-nowrap pr-4 bg-white text-sm font-medium text-coolGray-800">
-    <a href="#pablo" class="text-blueGray-500 block py-1 px-3" onclick="openDropdown(event,'table-light-1-dropdown')">
-    <i class="fas fa-ellipsis-v"></i>
-    </a>
     <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48" id="table-light-1-dropdown">
       <ul class="space-y-2">
         <li>
