@@ -31,11 +31,11 @@ async function isiRow(value) {
     .replace("#NOHPSEKOLAH#", sekolahData.phone_number)
     .replace("#JURUSAN#", jurusanData.nama)
     .replace("#JENJANG#", jurusanData.jenjang)
+    .replace("#IDEDIT#", value._id)
+    .replace("#IDHAPUS#", value._id)
     .replace("#JALUR#", value.jalur)
     .replace("#ALULBI#", value.alulbi)
     .replace("#ALJURUSAN#", value.aljurusan)
-    .replace("#IDEDIT#", value._id)
-    .replace("#IDHAPUS#", value._id)
     .replace("#WARNA#", getRandomColor())
     .replace(/#WARNALOGO#/g, getRandomColorName());
 
