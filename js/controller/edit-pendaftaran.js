@@ -1,6 +1,6 @@
 export function isiData(results) {
   const inputMapping = [
-    { id: "kdpendaftar", path: "kdpendaftar" },
+    { id: "kdpendaftaran", path: "kdpendaftar" },
     { id: "ktp", path: "biodata.ktp" },
     { id: "nama", path: "biodata.nama" },
     { id: "phone_number", path: "biodata.phone_number" },
