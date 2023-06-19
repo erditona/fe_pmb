@@ -1,5 +1,3 @@
-import Swal from "sweetalert2";
-
 function deleteData(IDHAPUS) {
   var sekolahId = IDHAPUS;
   var target_url = "https://ws-dito.herokuapp.com/delete-sekolah/" + sekolahId;
