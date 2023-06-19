@@ -16,6 +16,7 @@ function isiRow2(value) {
     .replace("#KDJURUSAN#", value.kdjurusan)
     .replace("#NAMA#", value.nama)
     .replace("#JENJANG#", value.jenjang)
+    .replace("#IDEDIT#", value._id)
     .replace("#IDHAPUS#", value._id)
     .replace("#WARNA#", getRandomColor())
     .replace(/#WARNALOGO#/g, getRandomColorName());
