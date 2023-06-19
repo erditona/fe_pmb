@@ -32,13 +32,13 @@
 
 export function isiData(results) {
   const inputMapping = [
-    { id: "kdpendaftaran", path: "kdpendaftaran" },
+    { id: "kdpendaftaran", path: "kdpendaftar" },
     { id: "ktp", path: "biodata.ktp" },
     { id: "nama", path: "biodata.nama" },
     { id: "phone_number", path: "biodata.phone_number" },
     { id: "alamat", path: "biodata.alamat" },
-    { id: "asalsekolah", path: "asalsekolah.nama" },
-    { id: "jurusan", path: "jurusan.nama" },
+    { id: "asalsekolah", path: "asalsekolah._id" },
+    { id: "jurusan", path: "jurusan._id" },
     { id: "jalur", path: "jalur" },
     { id: "alulbi", path: "alulbi" },
     { id: "aljurusan", path: "aljurusan" },
