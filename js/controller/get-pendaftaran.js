@@ -6,7 +6,7 @@ import { isiTable } from "../temp/table.js";
 var MyvarPendaftaran = {};
 
 export function isiTablePendaftaran(results) {
-  results.reverse();
+  // results.reverse();
   MyvarPendaftaran.length = results.length;
   results.forEach(isiRow);
   console.log(results);
