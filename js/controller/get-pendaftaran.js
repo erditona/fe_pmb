@@ -12,25 +12,25 @@ export function isiTablePendaftaran(results) {
   console.log(results);
 }
 
-function isiRow(value) {
+async function isiRow(value) {
   document.getElementById("jmlpendaftar").innerHTML = "" + MyvarPendaftaran.length + " Data";
 
   // Fetch sekolah berdasarkan ID
-  // const sekolahResponse = await fetch(`https://ws-dito.herokuapp.com/sekolah/${value.asalsekolah._id}`);
-  // const sekolahData = await sekolahResponse.json();
+  const sekolahResponse = await fetch(`https://ws-dito.herokuapp.com/sekolah/${value.asalsekolah._id}`);
+  const sekolahData = await sekolahResponse.json();
 
-  // // Fetch jurusan berdasarkan ID
-  // const jurusanResponse = await fetch(`https://ws-dito.herokuapp.com/jurusan/${value.jurusan._id}`);
-  // const jurusanData = await jurusanResponse.json();
+  // Fetch jurusan berdasarkan ID
+  const jurusanResponse = await fetch(`https://ws-dito.herokuapp.com/jurusan/${value.jurusan._id}`);
+  const jurusanData = await jurusanResponse.json();
 
   let content = isiTable
     .replace("#KDPENDAFTAR#", value.kdpendaftar)
     .replace("#NAMA#", value.biodata.nama)
     .replace("#NOHP#", value.biodata.phone_number)
-    .replace("#SEKOLAH#", value.sekolah.nama)
-    .replace("#NOHPSEKOLAH#", value.sekolah.phone_number)
-    .replace("#JURUSAN#", value.jurusan.nama)
-    .replace("#JENJANG#", value.jurusan.jenjang)
+    .replace("#SEKOLAH#", sekolahData.nama)
+    .replace("#NOHPSEKOLAH#", sekolahData.phone_number)
+    .replace("#JURUSAN#", jurusanData.nama)
+    .replace("#JENJANG#", jurusanData.jenjang)
     .replace("#JALUR#", value.jalur)
     .replace("#ALULBI#", value.alulbi)
     .replace("#ALJURUSAN#", value.aljurusan)
