@@ -150,20 +150,24 @@ async function generateKodePendaftaran() {
     randomNum = day + month + year + "01";
   }
 
-  // Menggabungkan semua bagian untuk membentuk kode pendaftaran
-  var kodePendaftaran = randomNum;
-
   // Memeriksa apakah kode pendaftaran sudah terdaftar di API
-  const isTerdaftar = await isKodePendaftaranTerdaftar(kodePendaftaran);
+  var isTerdaftar = await isKodePendaftaranTerdaftar(randomNum);
   if (isTerdaftar) {
-    // Jika kode pendaftaran sudah terdaftar, menghasilkan kode baru dengan increment angka acak
-    var increment = parseInt(randomNum.substr(-2)) + 1;
-    randomNum = randomNum.substr(0, randomNum.length - 2) + increment.toString().padStart(2, "0");
-    kodePendaftaran = randomNum;
+    // Jika kode pendaftaran sudah terdaftar, mencari kode pendaftaran yang belum terdaftar
+    var increment = 1;
+    do {
+      var newRandomNum = parseInt(randomNum.substr(-2)) + increment;
+      randomNum = randomNum.substr(0, randomNum.length - 2) + newRandomNum.toString().padStart(2, "0");
+      isTerdaftar = await isKodePendaftaranTerdaftar(randomNum);
+      increment++;
+    } while (isTerdaftar);
   }
 
   // Simpan angka acak berurutan ke localStorage
-  localStorage.setItem("randomNum", kodePendaftaran);
+  localStorage.setItem("randomNum", randomNum);
+
+  // Menggabungkan semua bagian untuk membentuk kode pendaftaran
+  var kodePendaftaran = randomNum;
 
   return kodePendaftaran;
 }
@@ -179,3 +183,54 @@ generateKodePendaftaran()
   .catch((error) => {
     console.error(error);
   });
+
+// Menyimpan angka acak berurutan ke localStorage setelah insert dilakukan
+document.getElementById("form-pendaftaran").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  var kodePendaftaran = kdpendaftaranInput.value;
+
+  fetch("https://ws-dito.herokuapp.com/pendaftaran", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      kdpendaftar: kodePendaftaran,
+      biodata: {
+        ktp: 1234567890,
+        nama: "John Doe",
+        phone_number: "081234567890",
+        alamat: "Jl. Contoh Alamat",
+      },
+      asalsekolah: {
+        nama: "SMA Contoh",
+        phone_number: "081234567891",
+        alamat: "Jl. Contoh Alamat Sekolah",
+      },
+      jurusan: {
+        kdjurusan: "123",
+        nama: "Contoh Jurusan",
+        jenjang: "S1",
+      },
+      jalur: "Rapot",
+      alulbi: "Rekomendasi",
+      aljurusan: "Keren dan Menarik",
+    }),
+  })
+    .then((response) => {
+      if (response.ok) {
+        // Mengupdate nilai input kode pendaftaran setelah insert dilakukan
+        generateKodePendaftaran()
+          .then((newKodePendaftaran) => {
+            kdpendaftaranInput.value = newKodePendaftaran;
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+});
