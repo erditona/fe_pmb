@@ -17,10 +17,14 @@ export function isiData(results) {
     { id: "aljurusan", path: "aljurusan" },
   ];
 
-  inputMapping.forEach(({ id, path, index, property }) => {
+  inputMapping.forEach(({ id, path }) => {
     const inputElement = document.getElementById(id);
-    const value = getNestedValue(results, path, index, property);
-    inputElement.value = value;
+    const value = getNestedValue(results, path);
+    if (inputElement) {
+      inputElement.value = value;
+    } else {
+      console.log(`Input element with id "${id}" not found.`);
+    }
   });
 }
 
