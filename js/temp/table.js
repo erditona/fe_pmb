@@ -202,10 +202,5 @@ export let isiTable4 = `
         </div>
       </div>
     </th>
-    <th class="whitespace-nowrap pr-4 bg-white text-sm font-medium text-coolGray-800">
-        <button type="button" id="del_button" onclick="deleteData('#IDHAPUS#')" class="btn-delete">
-            <i class="fas fa-trash-alt mr-1"></i> Delete
-        </button>
-    </th>
   </tr>
 `;
