@@ -13,10 +13,10 @@ export function isiTableCamaba(results4) {
 function isiRow4(value) {
   document.getElementById("jmlcamaba").innerHTML = "" + MyvarCamaba.length + " Data";
   let content = isiTable4
-    .replace("#KTP#", value.ktp)
-    .replace("#NAMA#", value.nama)
-    .replace("#NOHP#", value.phone_number)
-    .replace("#ALAMAT#", value.alamat)
+    .replace("#KTP#", value.biodata.ktp)
+    .replace("#NAMA#", value.biodata.nama)
+    .replace("#NOHP#", value.biodata.phone_number)
+    .replace("#ALAMAT#", value.biodata.alamat)
     .replace("#WARNA#", getRandomColor())
     .replace(/#WARNALOGO#/g, getRandomColorName());
   addInner("TabelCamaba", content);
