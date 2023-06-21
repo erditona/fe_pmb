@@ -96,8 +96,8 @@ function signUp() {
           confirmButtonText: "OK",
         }).then(() => {
           // Mengarahkan pengguna ke halaman login.html
-          window.location.reload();
-          //   window.location.href = "login.html";
+          //   window.location.reload();
+          window.location.href = "login.html";
         });
       } else {
         // Menampilkan pesan error menggunakan SweetAlert
