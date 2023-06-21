@@ -72,6 +72,7 @@ function pushData() {
       // Bangun objek data
       let data = {
         kdpendaftar: kdpendaftaranValue,
+        statuspendaftar: "Terdaftar",
         biodata: {
           ktp: ktpValue,
           nama: namaValue,
