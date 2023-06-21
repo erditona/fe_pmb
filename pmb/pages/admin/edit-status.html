@@ -307,6 +307,7 @@
                                 placeholder="Nomer KTP"
                                 required
                                 oninput="validateKTPNumber(this.value)"
+                                readonly
                               />
                             </div>
 
@@ -321,82 +322,16 @@
                                 maxlength="30"
                                 oninput="this.value = capitalizeEachWord(this.value);"
                                 autocomplete="off"
+                                readonly
                               />
                             </div>
 
                             <div class="relative w-full mb-3">
-                              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Nomor Telepon</label>
-                              <input
-                                id="phone_number"
-                                type="tel"
-                                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                placeholder="Nomor Telepon"
-                                required
-                                oninput="validatePhoneNumber(this.value)"
-                                autocomplete="off"
-                              />
-                            </div>
-  
-                            <div class="relative w-full mb-3">
-                              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Alamat</label>
-                              <input
-                                id="alamat"
-                                type="text"
-                                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                placeholder="Alamat"
-                                required
-                                maxlength="30"
-                                autocomplete="off"
-                              />
-                            </div>
-                            
-                            <div class="relative w-full mb-3">
-                              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Asal Sekolah</label>
-                              <select id="asalsekolah" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required>
-                                <option value="">Pilih Asal Sekolah</option>
-                              </select>
-                            </div>
-
-                            <div class="relative w-full mb-3">
-                              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Jurusan Yang Ingin Dimasuki</label>
-                              <select id="jurusan" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required>
-                                <option value="">Pilih Jurusan</option>
-                              </select>
-                            </div>
-
-                            <div class="relative w-full mb-3">
-                              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Jalur Pendaftaran</label>
-                              <select id="jalur" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required>
-                                <option value="">Pilih Jalur</option>
-                                <option value="Rapot">Rapot</option>
-                                <option value="Tes">Tes</option>
-                                <option value="Undangan">Undangan</option>
-                                <option value="Prestasi">Prestasi</option>
-                                <option value="Beasiswa">Beasiswa</option>
-                              </select>
-                            </div>
-
-                            <div class="relative w-full mb-3">
-                              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Alasan Masuk ULBI</label>
-                              <select id="alulbi" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required>
-                                <option value="">Pilih Alasan</option>
-                                <option value="Universitas Internasional">Universitas Internasional</option>
-                                <option value="Rekomendasi">Rekomendasi</option>
-                                <option value="Lokasi di Bandung">Lokasi di Bandung</option>
-                                <option value="Perguruan Tinggi Pertama Logistik">Perguruan Tinggi Pertama Logistik</option>
-                                <option value="Tidak diterima di PT Negeri">Tidak diterima di PT Negeri</option>
-                              </select>
-                            </div>
-
-                            <div class="relative w-full mb-3">
-                              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Alasan Pilih Jurusan</label>
-                              <select id="aljurusan" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required>
-                                <option value="">Pilih Alasan</option>
-                                <option value="Sedang Trend">Sedang Trend</option>
-                                <option value="Sesuai Minat">Sesuai Minat</option>
-                                <option value="Linear dengan Jurusan Sebelumnya">Linear dengan Jurusan Sebelumnya</option>
-                                <option value="Keren dan Menarik">Keren dan Menarik</option>
-                                <option value="Lapangan Kerja Luas">Lapangan Kerja Luas</option>
+                              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Pilih Status</label>
+                              <select id="statuspendaftar" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" required>
+                                <option value="">Pilih Status</option>
+                                <option value="Sedang Trend">Diterima</option>
+                                <option value="Sesuai Minat">Tidak Diterima</option>
                               </select>
                             </div>
                             
@@ -491,8 +426,8 @@
 
     
     //Edit
-    <script type="module" src="../../../js/fetch-editPendaftaran.js"></script>   
-    <script type="module" src="../../../js/controller/put-Pendaftaran.js"></script>   
+    <script type="module" src="../../../js/fetch-editStatus.js"></script>   
+    <script type="module" src="../../../js/controller/put-status.js"></script>   
     //generatekdpendaftaran
     <!-- <script src="../../../js/generateKdpendaftaran.js"></script> -->
 
