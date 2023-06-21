@@ -33,13 +33,25 @@ function signUp() {
   })
     .then((response) => response.json())
     .then((result) => {
-      // Menampilkan pesan dari response
-      alert(result.message);
-      // Mengosongkan nilai input setelah signup berhasil
-      document.getElementById("signup-form").reset();
+      // Menampilkan pesan dari response dengan SweetAlert
+      Swal.fire({
+        title: "Success",
+        text: result.message,
+        icon: "success",
+        confirmButtonText: "OK",
+      }).then(() => {
+        // Mengarahkan pengguna ke halaman login.html
+        window.location.reload;
+        //   window.location.href = "login.html";
+      });
     })
     .catch((error) => {
-      // Menampilkan pesan error jika terjadi kesalahan
-      console.error("Error:", error);
+      // Menampilkan pesan error jika terjadi kesalahan dengan SweetAlert
+      Swal.fire({
+        title: "Error",
+        text: error,
+        icon: "error",
+        confirmButtonText: "OK",
+      });
     });
 }
