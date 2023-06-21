@@ -55,6 +55,9 @@ export let isiTable = `
         <a type="button" href="edit-pendaftaran.html?pendaftaranId=#IDEDIT#" class="btn-edit">
             <i class="fas fa-edit mr-1"></i> Edit
         </a>
+        <a type="button" href="edit-status.html?pendaftaranId=#IDEDIT#" class="btn-edit">
+            <i class="fas fa-edit mr-1"></i> Edit
+        </a>
         <button type="button" id="del_button" onclick="deleteData('#IDHAPUS#')" class="btn-delete">
             <i class="fas fa-trash-alt mr-1"></i> Delete
         </button>
