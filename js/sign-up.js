@@ -15,8 +15,8 @@ function signUp() {
 
   // Membuat objek data yang akan dikirim ke server
   const data = {
-    firstName: firstName,
-    lastName: lastName,
+    firstname: firstName,
+    lastname: lastName,
     email: email,
     password: password,
   };
