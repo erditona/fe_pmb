@@ -19,6 +19,7 @@ function signUp() {
     lastname: lastName,
     email: email,
     password: password,
+    confirmpass: confirmPassword,
   };
 
   // Mengirim data ke server menggunakan AJAX
