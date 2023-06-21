@@ -1,10 +1,5 @@
-// Mengambil referensi form
-const signupForm = document.querySelector("form");
-
-// Menangani submit form
-signupForm.addEventListener("submit", (e) => {
-  e.preventDefault(); // Mencegah form submit secara default
-
+// Fungsi untuk menangani klik tombol Sign In
+function signUp() {
   // Mengambil nilai input dari form
   const firstName = document.getElementById("firstname").value;
   const lastName = document.getElementById("lastname").value;
@@ -39,10 +34,10 @@ signupForm.addEventListener("submit", (e) => {
       // Menampilkan pesan dari response
       alert(result.message);
       // Mengosongkan nilai input setelah signup berhasil
-      signupForm.reset();
+      document.getElementById("signup-form").reset();
     })
     .catch((error) => {
       // Menampilkan pesan error jika terjadi kesalahan
       console.error("Error:", error);
     });
-});
+}
