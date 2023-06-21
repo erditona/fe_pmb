@@ -40,12 +40,12 @@ export function isiData2(results) {
 
   inputMapping.forEach(({ id, path, index, property }) => {
     const inputElement = document.getElementById(id);
-    const value = getNestedValue(results, path, index, property);
+    const value = getNestedValue2(results, path, index, property);
     inputElement.value = value;
   });
 }
 
-function getNestedValue(obj, path, index, property) {
+function getNestedValue2(obj, path, index, property) {
   const value = path.split(".").reduce((value, key) => (value && value[key] ? value[key] : ""), obj);
   // console.log(`Value at path ${path}:`, value);
 
