@@ -1,16 +1,71 @@
-// Fungsi untuk menangani klik tombol Sign In
 function signUp() {
   // Mengambil nilai input dari form
   const firstName = document.getElementById("firstname").value;
-  console.log(firstName);
   const lastName = document.getElementById("lastname").value;
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   const confirmPassword = document.getElementById("confirmpass").value;
 
-  // Validasi password
+  // Validasi input
+  if (firstName.trim() === "") {
+    Swal.fire({
+      title: "Error",
+      text: "First Name cannot be empty.",
+      icon: "error",
+      confirmButtonText: "OK",
+    });
+    return;
+  }
+
+  if (lastName.trim() === "") {
+    Swal.fire({
+      title: "Error",
+      text: "Last Name cannot be empty.",
+      icon: "error",
+      confirmButtonText: "OK",
+    });
+    return;
+  }
+
+  if (email.trim() === "") {
+    Swal.fire({
+      title: "Error",
+      text: "Email cannot be empty.",
+      icon: "error",
+      confirmButtonText: "OK",
+    });
+    return;
+  }
+
+  // Validasi email dengan regex
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    Swal.fire({
+      title: "Error",
+      text: "Invalid email format.",
+      icon: "error",
+      confirmButtonText: "OK",
+    });
+    return;
+  }
+
+  if (password.trim() === "") {
+    Swal.fire({
+      title: "Error",
+      text: "Password cannot be empty.",
+      icon: "error",
+      confirmButtonText: "OK",
+    });
+    return;
+  }
+
   if (password !== confirmPassword) {
-    alert("Password confirmation does not match.");
+    Swal.fire({
+      title: "Error",
+      text: "Password confirmation does not match.",
+      icon: "error",
+      confirmButtonText: "OK",
+    });
     return;
   }
 
