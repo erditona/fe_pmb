@@ -27,6 +27,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="../../assets/img/apple-icon.png" />
     <link rel="stylesheet" href="../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" />
     <link rel="stylesheet" href="../../assets/styles/tailwind.css" />
+    <script src="../../../js/sign-in.js"></script>
     <title>Login | Notus Tailwind JS by Creative Tim</title>
   </head>
   <body class="text-blueGray-700 antialiased">
@@ -136,6 +137,7 @@
                     <div class="relative w-full mb-3">
                       <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">Email</label
                       ><input
+                        id="email"
                         type="email"
                         class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                         placeholder="Email"
@@ -144,6 +146,7 @@
                     <div class="relative w-full mb-3">
                       <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">Password</label
                       ><input
+                        id="password"
                         type="password"
                         class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                         placeholder="Password"
@@ -160,6 +163,7 @@
                       <button
                         class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                         type="button"
+                        onclick="login()"
                       >
                         Sign In
                       </button>
