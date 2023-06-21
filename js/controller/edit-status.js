@@ -3,7 +3,7 @@ export function isiData(results) {
     { id: "kdpendaftaran", path: "kdpendaftar" },
     { id: "ktp", path: "biodata.ktp" },
     { id: "nama", path: "biodata.nama" },
-    { id: "statuspendaftar", path: "statuspendaftar" },
+    // { id: "statuspendaftar", path: "statuspendaftar" },
   ];
 
   inputMapping.forEach(({ id, path, index, property }) => {
