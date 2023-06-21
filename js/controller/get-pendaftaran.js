@@ -69,7 +69,6 @@ function isiRow(value) {
     .replace("#ALULBI#", value.alulbi)
     .replace("#ALJURUSAN#", value.aljurusan)
     .replace("#IDEDIT#", value._id)
-    .replace("#IDSTATUS#", value._id)
     .replace("#IDHAPUS#", value._id)
     .replace("#WARNA#", getRandomColor())
     .replace(/#WARNALOGO#/g, getRandomColorName());
