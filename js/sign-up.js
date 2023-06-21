@@ -2,6 +2,7 @@
 function signUp() {
   // Mengambil nilai input dari form
   const firstName = document.getElementById("firstname").value;
+  console.log(firstName);
   const lastName = document.getElementById("lastname").value;
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
