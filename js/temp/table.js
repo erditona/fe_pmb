@@ -13,7 +13,10 @@ export let isiTable = `
     </th>
     <th class="whitespace-nowrap px-4 bg-white text-center">
       <div class="w-auto p-2 flex items-center justify-between">
-        <p>#STATUS#</p> 
+        <p>#STATUS#</p>
+        <a type="button" href="edit-status.html?pendaftaranId=#IDSTATUS#" class="btn-edit">
+          <i class="fas fa-edit mr-1" class="fa-light fa-pen-to-square" style="color: #9d174d;"></></i>
+        </a>
       </div>
     </th>
     <th class="whitespace-nowrap px-4 bg-white text-center">

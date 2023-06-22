@@ -85,8 +85,7 @@ function isiRow(value) {
   }
 
   const statusElement = `<div class="status" style="background-color: ${backgroundColor}; color: white; border-radius: 4px; padding: 4px 8px; margin-right: 2px; text-align: center; font-size: 12px;">${value.statuspendaftar}</div>`;
-  const editButton = `<a type="button" href="edit-status.html?pendaftaranId=${value._id}" class="btn-edit"><i class="fas fa-edit mr-1"></i></a>`;
-  const contentWithStatus = content.replace("#STATUS#", `${statusElement} ${editButton}`);
+  content = content.replace("#STATUS#", statusElement);
 
   addInner("iniTabel", content);
 }
