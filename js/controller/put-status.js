@@ -4,6 +4,9 @@ import { urlPUTStat, AmbilResponse } from "../config/url-put-pendaftaran.js";
 
 function pushData() {
   // Get the form values
+  let kdpendaftaranValue = parseInt(getValue("kdpendaftaran"));
+  let ktpValue = parseInt(getValue("ktp"));
+  let namaValue = getValue("nama");
   let statuspendaftarValue = document.getElementById("statuspendaftar").value; // Get the selected value from the dropdown
 
   // Perform form validation
@@ -13,7 +16,12 @@ function pushData() {
   }
 
   let data = {
+    kdpendaftar: kdpendaftaranValue,
     statuspendaftar: statuspendaftarValue,
+    biodata: {
+      ktp: ktpValue,
+      nama: namaValue,
+    },
   };
 
   console.log(data);
