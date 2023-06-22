@@ -2,7 +2,6 @@ const urlParams = new URLSearchParams(window.location.search);
 const pendaftaranId = urlParams.get("pendaftaranId");
 
 export let urlPUT = "https://ws-dito.herokuapp.com/upd-pendaftaran/" + pendaftaranId;
-export let urlPUTStat = "https://ws-dito.herokuapp.com/upd-status-pendaftaran/" + pendaftaranId;
 
 export function AmbilResponse(result) {
   console.log(result); // Display API response in the console
