@@ -1,6 +1,6 @@
 import { putData } from "https://bukulapak.github.io/api/process.js";
 import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
-import { urlPUT, AmbilResponse } from "../config/url-put-pendaftaran.js";
+import { urlPUTStat, AmbilResponse } from "../config/url-put-pendaftaran.js";
 
 function pushData() {
   // Get the form values
@@ -25,7 +25,7 @@ function pushData() {
   };
 
   console.log(data);
-  putData(urlPUT, data, AmbilResponse);
+  putData(urlPUTStat, data, AmbilResponse);
 }
 
 onClick("button", pushData);
