@@ -13,7 +13,7 @@ export let isiTable = `
     </th>
     <th class="whitespace-nowrap px-4 bg-white text-center">
       <div class="w-auto p-2">
-        <p class="text-xs font-semibold text-coolGray-800">#STATUS#</p>
+        <p>#STATUS#</p>
       </div>
       <div class="w-auto p-2">
         <a type="button" href="edit-status.html?pendaftaranId=#IDSTATUS#" class="btn-edit">
