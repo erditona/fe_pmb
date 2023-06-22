@@ -43,7 +43,7 @@ export let isiTable = `
     <th class="whitespace-nowrap px-4 bg-white text-center">
         <div class="w-auto p-2">
           <p class="text-xs font-semibold text-coolGray-800">#ALULBI#</p>
-          <p class="text-xs font-medium text-coolGray-500">#ALJURUSAN#</p>
+          <p class="text-xs font-semibold text-coolGray-800">#ALJURUSAN#</p>
         </div>
       </div>
     </th>
