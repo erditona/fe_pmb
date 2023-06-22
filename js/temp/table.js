@@ -14,8 +14,7 @@ export let isiTable = `
     <th class="whitespace-nowrap px-4 bg-white text-center">
       <div class="w-auto p-2">
         <p>#STATUS#</p>
-      </div>
-      <div class="w-auto p-2">
+        |
         <a type="button" href="edit-status.html?pendaftaranId=#IDSTATUS#" class="btn-edit">
             <i class="fas fa-edit mr-1"></i> Edit
         </a>
