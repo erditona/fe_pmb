@@ -14,8 +14,10 @@ export let isiTable = `
     <th class="whitespace-nowrap px-4 bg-white text-center">
       <div class="w-auto p-2">
         <p class="text-xs font-semibold text-coolGray-800">#STATUS#</p>
-        <a type="button" href="edit-pendaftaran.html?pendaftaranId=#IDEDIT#" class="btn-edit">
-            <i class="fas fa-edit mr-1"></i>
+      </div>
+      <div class="w-auto p-2">
+        <a type="button" href="edit-status.html?pendaftaranId=#IDSTATUS#" class="btn-edit">
+            <i class="fas fa-edit mr-1"></i> Edit
         </a>
       </div>
     </th>
@@ -60,8 +62,8 @@ export let isiTable = `
     </th>
 
     <th class="whitespace-nowrap pr-4 bg-white text-sm font-medium text-coolGray-800">
-        <a type="button" href="edit-status.html?pendaftaranId=#IDSTATUS#" class="btn-edit">
-            <i class="fas fa-edit mr-1"></i> Edit
+        <a type="button" href="edit-pendaftaran.html?pendaftaranId=#IDEDIT#" class="btn-edit">
+            <i class="fas fa-edit mr-1"></i>
         </a>
         <button type="button" id="del_button" onclick="deleteData('#IDHAPUS#')" class="btn-delete">
             <i class="fas fa-trash-alt mr-1"></i> Delete
@@ -75,20 +77,6 @@ export let isiTable = `
 
         .btn-delete {
             margin-left: 10px;
-        
-            .status-diterima {
-              background-color: blue;
-              color: white;
-          }
-          
-          .status-terdaftar {
-              background-color: green;
-              color: white;
-          }
-          
-          .status-tidak-diterima {
-              background-color: red;
-              color: white;
         }
     </style>
   </tr>
