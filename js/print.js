@@ -1,4 +1,4 @@
-import jsPDF from "jspdf";
+import jsPDF from "../node_modules/jspdf";
 
 function generatePDF() {
   const doc = new jsPDF();
