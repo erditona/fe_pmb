@@ -1,5 +1,5 @@
 import { putData } from "https://bukulapak.github.io/api/process.js";
-import { onClick } from "https://bukulapak.github.io/element/process.js";
+import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
 import { urlPUTStat, AmbilResponse } from "../config/url-put-pendaftaran.js";
 
 function pushData() {
