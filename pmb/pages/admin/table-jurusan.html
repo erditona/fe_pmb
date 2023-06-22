@@ -280,6 +280,7 @@
                     <div class="relative w-full px-4 max-w-full flex-grow flex-1">
                       <h3 class="font-semibold text-lg text-white">Tabel Jurusan</h3>
                     </div>
+                    <button onclick="createPDF()">Buat PDF</button>
                     <button
                       class="text-amber-500 bg-transparent border border-solid border-amber-500 hover:bg-amber-500 hover:text-white active:bg-amber-600 font-bold uppercase text-sm px-6 py-3 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                       type="button"
@@ -371,5 +372,15 @@
 
     //Delete
     <script src="../../../js/controller/delete-jurusan.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script>
+    <script>
+      function createPDF() {
+        const table = document.getElementById("TabelJurusan");
+        const doc = new jsPDF();
+        doc.autoTable({ html: table });
+        doc.save("data.pdf");
+      }
+    </script>
   </body>
 </html>
