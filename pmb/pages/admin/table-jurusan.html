@@ -375,6 +375,7 @@
     <script src="../../../js/controller/delete-jurusan.js"></script>
 
     <script>
+      import { jsPDF } from "jspdf";
       function generatePDF() {
         const doc = new jsPDF();
         doc.autoTable({ html: "#TabelJurusan" });
