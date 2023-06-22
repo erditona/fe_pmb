@@ -76,11 +76,11 @@ function isiRow(value) {
 
   // Menentukan warna latar belakang berdasarkan status
   let backgroundColor = "";
-  if (value.status === "terdaftar") {
+  if (value.statuspendaftar === "Terdaftar") {
     backgroundColor = "green";
-  } else if (value.status === "diterima") {
+  } else if (value.statuspendaftar === "Diterima") {
     backgroundColor = "blue";
-  } else if (value.status === "tidak diterima") {
+  } else if (value.statuspendaftar === "Tidak Diterima") {
     backgroundColor = "red";
   }
 
