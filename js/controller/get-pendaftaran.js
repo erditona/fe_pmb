@@ -73,5 +73,18 @@ function isiRow(value) {
     .replace("#IDHAPUS#", value._id)
     .replace("#WARNA#", getRandomColor())
     .replace(/#WARNALOGO#/g, getRandomColorName());
+
+  // Menentukan kelas CSS berdasarkan status
+  let statusClass = "";
+  if (value.status === "terdaftar") {
+    statusClass = "status-terdaftar";
+  } else if (value.status === "diterima") {
+    statusClass = "status-diterima";
+  } else if (value.status === "tidak diterima") {
+    statusClass = "status-tidak-diterima";
+  }
+
+  content = content.replace("#STATUS#", `<p class="text-xs font-semibold text-coolGray-800 ${statusClass}">${value.statuspendaftar}</p>`);
+
   addInner("iniTabel", content);
 }

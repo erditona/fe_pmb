@@ -12,6 +12,11 @@ export let isiTable = `
       </div>
     </th>
     <th class="whitespace-nowrap px-4 bg-white text-center">
+      <div class="w-auto p-2">
+        <p class="text-xs font-semibold text-coolGray-800">#STATUS#</p>
+      </div>
+    </th>
+    <th class="whitespace-nowrap px-4 bg-white text-center">
         <div class="w-auto p-2">
           <p class="text-xs font-semibold text-coolGray-800">#NAMA#</p>
           <p class="text-xs font-medium text-coolGray-500">#NOHP#</p>
@@ -70,6 +75,20 @@ export let isiTable = `
 
         .btn-delete {
             margin-left: 10px;
+        
+            .status-diterima {
+              background-color: blue;
+              color: white;
+          }
+          
+          .status-terdaftar {
+              background-color: green;
+              color: white;
+          }
+          
+          .status-tidak-diterima {
+              background-color: red;
+              color: white;
         }
     </style>
   </tr>
