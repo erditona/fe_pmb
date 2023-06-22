@@ -69,7 +69,7 @@ export let isiTable = `
 
     <style>
         .btn-container {
-          margin-top: 5px; /* Atur jarak antara tombol */
+          margin-top: 5px;
       }  
     </style>
   </tr>
