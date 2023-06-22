@@ -43,13 +43,7 @@ export let isiTable = `
     <th class="whitespace-nowrap px-4 bg-white text-center">
         <div class="w-auto p-2">
           <p class="text-xs font-semibold text-coolGray-800">#ALULBI#</p>
-          <p class="text-xs font-medium text-coolGray-500">#JALUR#</p>
-        </div>
-      </div>
-    </th>
-    <th class="whitespace-nowrap px-4 bg-white text-center">
-        <div class="w-auto p-2">
-          <p class="text-xs font-semibold text-coolGray-800">#ALJURUSAN#</p>
+          <p class="text-xs font-medium text-coolGray-500">#ALJURUSAN#</p>
         </div>
       </div>
     </th>
@@ -57,12 +51,12 @@ export let isiTable = `
     <th class="whitespace-nowrap pr-4 bg-white text-sm font-medium text-coolGray-800">
         <div class="btn-container">
             <a type="button" href="edit-pendaftaran.html?pendaftaranId=#IDEDIT#" class="btn-edit">
-                <i class="fas fa-edit mr-1"> Edit</i>
+                <i class="fas fa-edit mr-1" style="color: #9d174d;"> Edit</i>
             </a>
         </div>
         <div class="btn-container">
             <button type="button" id="del_button" onclick="deleteData('#IDHAPUS#')" class="btn-delete">
-                <i class="fas fa-trash-alt mr-1"></i> Delete
+                <i class="fas fa-trash-alt mr-1" style="color: #9d174d;"></i> Delete
             </button>
         </div>
     </th>
