@@ -135,20 +135,17 @@ function isiRow(value) {
     .replace("#IDHAPUS#", value._id)
     .replace("#WARNALOGO#", getRandomColorName());
 
-  // Menentukan kelas CSS berdasarkan status
-  let statusClass = "";
+  // Menentukan warna latar belakang berdasarkan status
+  let backgroundColor = "";
   if (value.status === "terdaftar") {
-    statusClass = "status-terdaftar";
+    backgroundColor = "green";
   } else if (value.status === "diterima") {
-    statusClass = "status-diterima";
+    backgroundColor = "blue";
   } else if (value.status === "tidak diterima") {
-    statusClass = "status-tidak-diterima";
+    backgroundColor = "red";
   }
 
-  content = content.replace("#STATUS#", `<p class="text-xs font-semibold text-coolGray-800 ${statusClass}">${value.status}</p>`);
+  content = content.replace("#STATUS#", `<p class="text-xs font-semibold text-coolGray-800" style="background-color: ${backgroundColor}">${value.statuspendaftar}</p>`);
 
   addInner("iniTabel", content);
 }
-
-// Memanggil fungsi untuk mengisi tabel pendaftaran dengan data yang diperoleh dari API
-isiTablePendaftaran();
