@@ -8,7 +8,7 @@ fetch("https://ws-dito.herokuapp.com/jurusan")
     data.forEach((item) => {
       const option = document.createElement("option");
       option.value = item._id;
-      option.text = item.nama;
+      option.text = item.nama + " (" + item.jenjang + ")";
       jurusanDropdown.appendChild(option);
     });
   })
