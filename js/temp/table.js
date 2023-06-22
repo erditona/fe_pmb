@@ -12,11 +12,10 @@ export let isiTable = `
       </div>
     </th>
     <th class="whitespace-nowrap px-4 bg-white text-center">
-      <div class="w-auto p-2">
+      <div class="w-auto p-2 flex items-center justify-between">
         <p>#STATUS#</p>
-        |
         <a type="button" href="edit-status.html?pendaftaranId=#IDSTATUS#" class="btn-edit">
-            <i class="fas fa-edit mr-1"></i> Edit
+          <i class="fas fa-edit mr-1"></i>
         </a>
       </div>
     </th>
@@ -62,7 +61,7 @@ export let isiTable = `
 
     <th class="whitespace-nowrap pr-4 bg-white text-sm font-medium text-coolGray-800">
         <a type="button" href="edit-pendaftaran.html?pendaftaranId=#IDEDIT#" class="btn-edit">
-            <i class="fas fa-edit mr-1"></i>
+            <i class="fas fa-edit mr-1"> Edit</i>
         </a>
         <button type="button" id="del_button" onclick="deleteData('#IDHAPUS#')" class="btn-delete">
             <i class="fas fa-trash-alt mr-1"></i> Delete

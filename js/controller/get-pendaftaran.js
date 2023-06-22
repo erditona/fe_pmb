@@ -84,7 +84,8 @@ function isiRow(value) {
     backgroundColor = "red";
   }
 
-  content = content.replace("#STATUS#", `<p class="text-xs font-semibold text-coolGray-800" style="background-color: ${backgroundColor}">${value.statuspendaftar}</p>`);
+  const statusElement = `<div class="status" style="background-color: ${backgroundColor}; color: white; border-radius: 9999px; padding: 6px 12px; text-align: center;">${value.statuspendaftar}</div>`;
+  content = content.replace("#STATUS#", statusElement);
 
   addInner("iniTabel", content);
 }
