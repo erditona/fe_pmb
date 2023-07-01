@@ -90,15 +90,15 @@ function validateInput2(input) {
   // Remove non-digit characters
   let sanitizedValue = input.value.replace(/\D/g, "");
 
-  // Limit to a maximum of 4 digits
-  sanitizedValue = sanitizedValue.slice(0, 4);
+  // Limit to a maximum of 8 digits
+  sanitizedValue = sanitizedValue.slice(0, 8);
 
   // Update the input value
   input.value = sanitizedValue;
 
   // Validate the input
-  if (sanitizedValue.length !== 4) {
-    document.getElementById("status").innerHTML = "Kode Sekolah harus terdiri dari 4 angka.";
+  if (sanitizedValue.length !== 8) {
+    document.getElementById("status").innerHTML = "Kode Sekolah harus terdiri dari 8 digit.";
   } else {
     document.getElementById("status").innerHTML = "";
   }
