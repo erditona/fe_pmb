@@ -2,6 +2,30 @@ import { postData } from "https://bukulapak.github.io/api/process.js";
 import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
 import { urlPOST, AmbilResponse } from "../config/url-post-pendaftaran.js";
 
+// Fungsi untuk menghasilkan kode pendaftaran berdasarkan tanggal sekarang, ktpValue, dan angka acak
+function generateKodePendaftaran(ktpValue) {
+  // Mendapatkan tanggal sekarang
+  var currentDate = new Date();
+  // Mendapatkan dua digit tahun terakhir
+  var year = currentDate.getFullYear().toString().substr(-2);
+  // Mendapatkan dua digit bulan
+  var month = (currentDate.getMonth() + 1).toString().padStart(2, "0");
+  // Mendapatkan dua digit tanggal
+  var day = currentDate.getDate().toString().padStart(2, "0");
+
+  // Mengambil 6 angka setelah 6 angka pertama pada ktpValue
+  var ktpSuffix = ktpValue.toString().substr(6, 6);
+
+  // Generate 3 angka acak
+  var randomNum = Math.floor(Math.random() * 1000)
+    .toString()
+    .padStart(3, "0");
+
+  // Menggabungkan tanggal, ktpSuffix, dan randomNum
+  var kodePendaftar = parseInt(day + month + year + ktpSuffix + randomNum);
+  return kodePendaftar;
+}
+
 async function getSchoolData(schoolId) {
   // Fetch school data based on the ID (replace with your API endpoint)
   const response = await fetch(`https://ws-dito.herokuapp.com/sekolah/${schoolId}`);
@@ -24,7 +48,6 @@ async function getMajorData(majorId) {
 
 function pushData() {
   // Get the form values
-  let kdpendaftaranValue = parseInt(getValue("kdpendaftaran"));
   let ktpValue = parseInt(getValue("ktp"));
   let namaValue = getValue("nama");
   let phoneValue = getValue("phone_number");
@@ -57,52 +80,50 @@ function pushData() {
   // Clear the status message if all fields are valid
   document.getElementById("status").textContent = "";
 
+  // Generate kode pendaftaran
+  let kdpendaftarValue = generateKodePendaftaran(ktpValue);
+
   // Ambil data sekolah dan data jurusan secara bersamaan
-  Promise.all([getSchoolData(asalSekolahValue), getMajorData(jurusanValue)])
-    .then(([schoolData, majorData]) => {
-      // Ekstrak nilai-nilai yang diperlukan dari data yang diambil
-      let asalSekolahText = schoolData.nama;
-      let phoneSekolahValue = schoolData.phone_number;
-      let alamatSekolahValue = schoolData.alamat;
+  Promise.all([getSchoolData(asalSekolahValue), getMajorData(jurusanValue)]).then(([schoolData, majorData]) => {
+    // Ekstrak nilai-nilai yang diperlukan dari data yang diambil
+    let asalSekolahText = schoolData.nama;
+    let phoneSekolahValue = schoolData.phone_number;
+    let alamatSekolahValue = schoolData.alamat;
 
-      let jurusanText = majorData.nama;
-      let kdjurusanValue = majorData.kdjurusan;
-      let jenjangValue = majorData.jenjang;
+    let jurusanText = majorData.nama;
+    let kdjurusanValue = majorData.kdjurusan;
+    let jenjangValue = majorData.jenjang;
 
-      // Bangun objek data
-      let data = {
-        kdpendaftar: kdpendaftaranValue,
-        statuspendaftar: "Terdaftar",
-        biodata: {
-          ktp: ktpValue,
-          nama: namaValue,
-          phone_number: phoneValue,
-          alamat: alamatValue,
-        },
-        asalsekolah: {
-          _id: asalSekolahValue,
-          nama: asalSekolahText,
-          phone_number: phoneSekolahValue,
-          alamat: alamatSekolahValue,
-        },
-        jurusan: {
-          _id: jurusanValue,
-          kdjurusan: kdjurusanValue,
-          nama: jurusanText,
-          jenjang: jenjangValue,
-        },
-        jalur: jalurValue,
-        alulbi: alasanULBIValue,
-        aljurusan: alasanJurusanValue,
-      };
+    // Bangun objek data
+    let data = {
+      kdpendaftar: kdpendaftarValue,
+      statuspendaftar: "Terdaftar",
+      biodata: {
+        ktp: ktpValue,
+        nama: namaValue,
+        phone_number: phoneValue,
+        alamat: alamatValue,
+      },
+      asalsekolah: {
+        _id: asalSekolahValue,
+        nama: asalSekolahText,
+        phone_number: phoneSekolahValue,
+        alamat: alamatSekolahValue,
+      },
+      jurusan: {
+        _id: jurusanValue,
+        kdjurusan: kdjurusanValue,
+        nama: jurusanText,
+        jenjang: jenjangValue,
+      },
+      jalur: jalurValue,
+      alulbi: alasanULBIValue,
+      aljurusan: alasanJurusanValue,
+    };
 
-      console.log(data);
-      postData(urlPOST, data, AmbilResponse);
-    })
-    .catch((error) => {
-      console.error(error);
-      document.getElementById("status").textContent = "Failed to fetch data.";
-    });
+    console.log(data);
+    postData(urlPOST, data, AmbilResponse);
+  });
 }
 
 onClick("button", pushData);
