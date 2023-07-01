@@ -55,6 +55,3 @@ function getNestedValue2(obj, path, index, property) {
 
   return value;
 }
-
-//   return value;
-// }
