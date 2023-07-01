@@ -57,7 +57,7 @@ export let isiTable = `
     <th class="whitespace-nowrap pr-4 bg-white text-sm font-medium text-coolGray-800">
         <div class="btn-container">
             <a type="button" href="edit-pendaftaran.html?pendaftaranId=#IDEDIT#" class="btn-edit">
-                <i class="fas fa-edit mr-1" style="color: #9d174d;"> Edit</i>
+                <i class="fas fa-edit mr-1" style="color: #9d174d;"></i> Edit
             </a>
         </div>
         <div class="btn-container">
