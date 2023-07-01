@@ -80,7 +80,7 @@ function isiRow(value) {
     backgroundColor = "green";
   } else if (value.statuspendaftar === "Diterima") {
     backgroundColor = "blue";
-  } else if (value.statuspendaftar === "Tidak Diterima") {
+  } else if (value.statuspendaftar === "Ditolak") {
     backgroundColor = "red";
   }
 
