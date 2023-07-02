@@ -46,24 +46,24 @@ export let isiTable = `
         </div>
       </div>
     </th>
-    <th class="whitespace-nowrap px-4 bg-white text-center">
-        <div class="w-auto p-2">
-          <p class="text-xs font-semibold text-coolGray-800">#ALULBI#</p>
-          <p class="text-xs font-semibold text-coolGray-800">#ALJURUSAN#</p>
-        </div>
-      </div>
-    </th>
 
     <th class="whitespace-nowrap pr-4 bg-white text-sm font-medium text-coolGray-800">
-        <div class="btn-container">
-            <a type="button" href="edit-pendaftaran.html?pendaftaranId=#IDEDIT#" class="btn-edit">
-                <i class="fas fa-edit mr-1" style="color: #9d174d;"></i> Edit
-            </a>
-        </div>
-        <div class="btn-container">
-            <button type="button" id="del_button" onclick="deleteData('#IDHAPUS#')" class="btn-delete">
-                <i class="fas fa-trash-alt mr-1" style="color: #9d174d;"></i> Delete
-            </button>
+        <div class="flex justify-center space-x-4">
+            <div class="btn-container">
+                <a type="button" href="detail-pendaftaran.html?pendaftaranId=#IDDETAIL#" class="btn-edit">
+                <i class="fa-solid fa-circle-info fa-lg"></i> Detail
+                </a>
+            </div>
+            <div class="btn-container">
+                <a type="button" href="edit-pendaftaran.html?pendaftaranId=#IDEDIT#" class="btn-edit">
+                    <i class="fas fa-edit mr-1" style="color: #9d174d;"></i> Edit
+                </a>
+            </div>
+            <div class="btn-container">
+                <button type="button" id="del_button" onclick="deleteData('#IDHAPUS#')" class="btn-delete">
+                    <i class="fas fa-trash-alt mr-1" style="color: #9d174d;"></i> Delete
+                </button>
+            </div>
         </div>
     </th>
 

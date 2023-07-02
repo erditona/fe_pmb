@@ -68,6 +68,7 @@ function isiRow(value) {
     .replace("#JALUR#", value.jalur)
     .replace("#ALULBI#", value.alulbi)
     .replace("#ALJURUSAN#", value.aljurusan)
+    .replace("#IDDETAIL#", value._id)
     .replace("#IDEDIT#", value._id)
     .replace("#IDSTATUS#", value._id)
     .replace("#IDHAPUS#", value._id)
