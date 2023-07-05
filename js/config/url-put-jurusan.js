@@ -7,7 +7,7 @@ export function AmbilResponse(result) {
   console.log(result); // Display API response in the console
 
   Swal.fire({
-    title: "Notification",
+    title: "Notifikasi",
     text: result.message,
     icon: "info",
     confirmButtonColor: "#3085d6",

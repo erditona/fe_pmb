@@ -3,7 +3,7 @@ function deleteData(IDHAPUS) {
   var target_url = "https://ws-dito.herokuapp.com/delete-jurusan/" + jurusanId;
 
   Swal.fire({
-    title: "Confirmation",
+    title: "Konfirmasi",
     text: "Apakah Anda yakin ingin menghapus data ini?",
     icon: "warning",
     showCancelButton: true,
