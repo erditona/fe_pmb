@@ -110,3 +110,16 @@ function signUp() {
       }
     });
 }
+
+function PushButton() {
+  let firstName = document.getElementById("firstname").value
+  let lastName = document.getElementById("lastname").value
+  let email = document.getElementById("email").value
+  let password = document.getElementById("password").value
+  let confirmpass = document.getElementById("confirmpass").value
+
+  
+  PostSignUp(firstName, lastName, email, password, confirmpass);
+  document.getElementById("formsignup").style.display = 'none';
+   
+}
