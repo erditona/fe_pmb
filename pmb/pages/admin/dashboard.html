@@ -29,10 +29,14 @@
     <link rel="stylesheet" href="../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="../../assets/styles/tailwind.css" />
+    <!-- //sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
     <script type="module" src="../../../js/fetch-pendaftaran.js"></script>
     <script type="module" src="../../../js/fetch-camaba.js"></script>
     <script type="module" src="../../../js/fetch-jurusan.js"></script>
     <script type="module" src="../../../js/fetch-sekolah.js"></script>
+    <script type="module" src="../../../js/auth.js"></script>
+    <script src="../../../js/logout.js"></script>
     <title>Dashboard | PMB - ULBI</title>
   </head>
   <body class="text-blueGray-700 antialiased">
@@ -63,9 +67,9 @@
                   /></span></div
               ></a>
               <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48" id="user-responsive-dropdown">
-                <a href="#seting-acc" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"><i class="fa-solid fa-wrench"></i> Pengaturan</a>
+                <a href="#seting-acc" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700" style="text-align: center"><i class="fa-solid fa-wrench"></i> Pengaturan</a>
                 <div class="h-0 my-2 border border-solid border-blueGray-100"></div>
-                <a href="../auth/login.html" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"><i class="fa-solid fa-right-from-bracket"></i> Keluar</a>
+                <button onclick="logout()" id="logout" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"><i class="fa-solid fa-right-from-bracket"></i> Keluar</button>
               </div>
             </li>
           </ul>
@@ -160,9 +164,9 @@
                 </div>
               </a>
               <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48" id="user-dropdown">
-                <a href="#seting-acc" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"><i class="fa-solid fa-wrench"></i> Pengaturan</a>
+                <a href="#seting-acc" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700" style="text-align: center"><i class="fa-solid fa-wrench"></i> Pengaturan</a>
                 <div class="h-0 my-2 border border-solid border-blueGray-100"></div>
-                <a href="../auth/login.html" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"><i class="fa-solid fa-right-from-bracket"></i> Keluar</a>
+                <button onclick="logout()" id="logout" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"><i class="fa-solid fa-right-from-bracket"></i> Keluar</button>
               </div>
             </ul>
           </div>

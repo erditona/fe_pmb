@@ -3,7 +3,7 @@ function deleteData(IDHAPUS) {
   var target_url = "https://ws-dito.herokuapp.com/delete-sekolah/" + sekolahId;
 
   Swal.fire({
-    title: "Confirmation",
+    title: "Konfirmasi",
     text: "Apakah Anda yakin ingin menghapus data ini?",
     icon: "warning",
     showCancelButton: true,
