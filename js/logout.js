@@ -10,9 +10,15 @@ function logout() {
     if (result.isConfirmed) {
       // Menghapus token dari local storage
       localStorage.removeItem("token");
+      localStorage.removeItem("profileName");
 
       // Redirect ke halaman login
-      window.location.href = "../auth/login.html";
+      const currentLocation = window.location.pathname;
+      if (currentLocation.includes("admin")) {
+        window.location.href = "../auth/login.html";
+      } else {
+        window.location.href = "auth/login.html";
+      }
     }
   });
 }
