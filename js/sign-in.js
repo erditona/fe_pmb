@@ -114,11 +114,7 @@ function login() {
           confirmButtonText: "OK",
         }).then(() => {
           // Mengarahkan pengguna ke halaman setelah login berhasil
-          if (
-            email === "admin01@gmail.com" ||
-            email === "admin02@gmail.com" ||
-            email === "admin03@gmail.com"
-          ) {
+          if (email === "admin01@gmail.com" || email === "admin02@gmail.com" || email === "admin03@gmail.com") {
             // Jika email adalah admin01@gmail.com
             window.location.href = "../admin/dashboard.html";
           } else {
@@ -149,5 +145,3 @@ function login() {
       console.error("Error:", error);
     });
 }
-
-

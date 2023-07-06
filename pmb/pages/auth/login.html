@@ -63,7 +63,7 @@
                   <hr class="mt-6 mb-6 border-b-1 border-blueGray-300" />
                 </div>
                 <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-                  <form>
+                  <form id="formlogin">
                     <div class="relative w-full mb-3">
                       <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">Email</label
                       ><input
@@ -97,7 +97,6 @@
                       >
                         Masuk
                       </button>
-                     
                     </div>
                     <div class="text-center pt-2">
                       <p style="font-size: 16px">
@@ -177,6 +176,11 @@
       });
       document.getElementById(dropdownID).classList.toggle("hidden");
       document.getElementById(dropdownID).classList.toggle("block");
+    }
+  </script>
+  <script>
+    if (localStorage.getItem("token") != null) {
+      document.getElementById("formlogin").style.display = "none";
     }
   </script>
 </html>
