@@ -1,6 +1,6 @@
 # FRONT END PENERIMAAN MAHASISWA BARU 
 ## Link-FE
-* Dasboard Admin: https://erditona.github.io/fe_pmb/pmb/pages/admin/dashboard.html
+* PMB Landing Page: https://erditona.github.io/fe_pmb/pmb/
 
 ## Link Boilerplate
 https://github.com/erditona/ws-dito
